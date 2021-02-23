@@ -1,0 +1,71 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use DB;
+
+class JarakController extends Controller
+{
+    public function index()
+    {
+        $kecamatan = DB::table('kecamatan')->get();
+        $data_faskes = DB::table('datafaskes')->get();
+
+        return view('admin.jarak.index', ['kecamatan' => $kecamatan, 'data_faskes' => $data_faskes]);
+    }
+
+    public function getAlamat(Request $request)
+    {
+        $id_faskes = $request->input('id_faskes');
+        $id_kecamatan = $request->input('id_kecamatan');
+        
+        try {
+            $faskes = DB::table('datafaskes')->where('id_faskes', $id_faskes)->first();
+            $kecamatan = DB::table('kecamatan')->where('id_kecamatan', $id_kecamatan)->first();
+
+            return response()->json(['faskes' => $faskes, 'kecamatan' => $kecamatan], 200);
+        } catch (Exception  $th) {
+            return response()->json(['message' => $th->getMessage()],  $th->getStatusCode());
+        }
+        
+    }
+
+    public function addJarak(Request $request)
+    {
+        $id_faskes = $request->input('id_faskes');
+        $id_kecamatan = $request->input('id_kecamatan');
+        $result_jarak = $request->input('result_jarak');
+
+        $jarak = DB::table('jarak')->where('id_kecamatan', $id_kecamatan)->where('id_faskes', $id_faskes)->first();
+        if ($jarak) {
+            $update = DB::table('jarak')->where('id_kecamatan', $id_kecamatan)
+                        ->where('id_faskes', $id_faskes)
+                        ->update(['id_kecamatan' => $id_kecamatan, 'id_faskes' => $id_faskes, 'jrk' => $result_jarak]);
+
+            if($jarak){
+                return response()->json(['status' => 'updated'], 200);
+            }
+    
+            if ($request->ajax() || $request->wantsJson()) {
+                return new JsonResponse(['message' => $e->getMessage()], 422);
+            }
+
+        } else {
+            $jarak = DB::table('jarak')->insert([
+                'id_kecamatan' => $id_kecamatan,
+                'id_faskes' => $id_faskes,
+                'jrk' => $result_jarak
+            ]);
+
+            if($jarak){
+                return response()->json(['status' => 'insert'], 200);
+            }
+    
+            if ($request->ajax() || $request->wantsJson()) {
+                return new JsonResponse(['message' => $e->getMessage()], 422);
+            }
+        }
+    }
+}
