@@ -33,6 +33,9 @@ Route::group(['prefix' => 'admin'], function(){
         //this list data to datatable data faskes
         Route::get('/faskes/list', 'Admin\FaskesController@dataList')->name('admin.faskes.list');
 
+        //this add faskes route
+        Route::get('/faskes/add', 'Admin\FaskesController@add')->name('admin.faskes.add');
+
         //this route edit data faskes
         Route::get('/faskes/edit/{id}', 'Admin\FaskesController@edit')->name('admin.faskes.edit');
 

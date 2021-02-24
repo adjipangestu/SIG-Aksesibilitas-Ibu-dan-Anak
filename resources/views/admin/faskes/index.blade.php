@@ -19,7 +19,7 @@
         <!-- /Title -->
 
         <section class="hk-sec-wrapper">
-            <h5 class="hk-sec-title"><a href="#" class="btn btn-primary">Tambah Data</a></h5>
+            <h5 class="hk-sec-title"><a href="{{ route('admin.faskes.add') }}" class="btn btn-primary">Tambah Data</a></h5>
             <div class="row">
                 <div class="col-sm">
                     <div class="table-wrap">
@@ -107,5 +107,4 @@
             });
         } );
     </script>
-
 @endpush

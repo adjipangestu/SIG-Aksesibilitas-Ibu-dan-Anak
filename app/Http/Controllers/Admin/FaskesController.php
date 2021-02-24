@@ -44,7 +44,12 @@ class FaskesController extends Controller
                 ->make(true);
     }
 
-    public function edit()
+    public function add()
+    {
+        return view('admin.faskes.add');
+    }
+
+    public function edit($id)
     {
         # code...
     }
