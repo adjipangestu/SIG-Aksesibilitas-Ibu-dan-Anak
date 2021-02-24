@@ -68,4 +68,32 @@ class JarakController extends Controller
             }
         }
     }
+
+    public function cek(Request $request)
+    {
+        $faskes = DB::table('jarak')
+                    ->join('kecamatan', 'kecamatan.id_kecamatan', '=', 'jarak.id_kecamatan')
+                    ->join('datafaskes', 'datafaskes.id_faskes', '=', 'jarak.id_faskes')
+                    ->select('datafaskes.nama_faskes', 'kecamatan.nama_kecamatan');
+
+        $id_kecamatan = !empty($request->id_kecamatan) ? ($request->id_kecamatan) : ('');
+
+        if ($id_kecamatan) {
+            $faskes->where('jarak.id_kecamatan', $id_kecamatan);
+        }
+
+
+        
+        $data = $faskes->get();
+        $group = $data->groupBy('nama_kecamatan');
+
+        foreach ($group as $key => $value) {
+            echo '<h3>'. $key . '<h3><ul>';
+            foreach ($value as $item) {
+                echo '<li>' . $item->nama_faskes . '</li>'; 
+            }
+            echo '</ul><br>';
+        }
+        // return $group;
+    }
 }

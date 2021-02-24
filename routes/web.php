@@ -25,6 +25,7 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('/jarak', 'Admin\JarakController@index')->name('admin.jarak.index');
         Route::get('/jarak/get-alamat', 'Admin\JarakController@getAlamat')->name('admin.jarak.get_alamat_fakses');
         Route::post('/jarak/add', 'Admin\JarakController@addJarak')->name('admin.jarak.add');
+        Route::get('/jarak/cek', 'Admin\JarakController@cek')->name('admin.jarak.cek');
 
 
         //this route all data faskes
