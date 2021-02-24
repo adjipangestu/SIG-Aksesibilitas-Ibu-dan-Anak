@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Pangong I Developer-friendly Admin Dashboard UI framework</title>
-    <meta name="description" content="A responsive bootstrap 4 admin dashboard template by hencework" />
+    <title>SIG AIKIA</title>
+    <meta name="description" content="SIG Aksesibilitas Ibu dan Anak merupakan sistem informasi berbasis geografis yang menampilkan persebaran dan indeks aksesibilitas fasilitas kesehatan ibu dan anak yang berada di wilayah kota Bandarlampung. Aksesibilitas merupakan" />
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico">
