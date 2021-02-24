@@ -32,41 +32,20 @@
 			<div class="container px-0">
 				<nav class="navbar navbar-expand-xl navbar-light hk-navbar hk-navbar-alt shadow-none">
 					<a class="navbar-toggle-btn nav-link-hover navbar-toggler" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarCollapseAlt" aria-controls="navbarCollapseAlt" aria-expanded="false" aria-label="Toggle navigation"><span class="feather-icon"><i data-feather="menu"></i></span></a>
-					<a class="navbar-brand" href="dashboard1.html">
-						<img class="brand-img d-inline-block align-top" src="dist/img/landing-pg/logo-light.png" alt="brand" />
+					<a class="navbar-brand" href="#">
+						<h4>SIG AKIA</h4>
 					</a>
 					
 					<div class="collapse navbar-collapse ml-auto" id="navbarCollapseAlt">
 						<ul class="navbar-nav ml-auto">
-							<li class="nav-item">
-								<a class="nav-link active" data-scroll href="#preview_sec">Preview</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" data-scroll href="#pages_sec">Pages</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" data-scroll href="#apps_sec">Apps</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" data-scroll href="#features_sec">Features</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" data-scroll href="#faq_sec">Faq</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="https://hencework.gitbook.io/pangong/" target="_blank">Docs</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="https://hencework.ticksy.com/" target="_blank">Support</a>
-							</li>
 							<li class="nav-item mr-10">
-								<a class="nav-link" href="https://hencework.gitbook.io/pangong/changelog" target="_blank">Log<span class="badge badge-soft-success badge-sm badge-pill ml-10">v 1.0</span></a>
+								<a class="nav-link" href="#">Version<span class="badge badge-soft-success badge-sm badge-pill ml-10">v 1.0</span></a>
 							</li>
 						</ul>
 					</div>
 					<ul class="navbar-nav hk-navbar-content">
 						<li class="nav-item">
-							<a class="btn btn-outline-primary btn-rounded" href="#">purchase</a>
+							<a class="btn btn-outline-primary btn-rounded" href="#">Login</a>
 						</li>
 					</ul>
 				</nav>
@@ -76,322 +55,12 @@
         <div class="hk-pg-wrapper pt-0">
 			<!-- Row -->
 			<div class="row">
-				<div class="col-xl-12">
-					
-					<!-- Preview Sec -->
-					<section id="preview_sec" class="hk-preview-sec hk-landing-sec pb-0">
-						<div class="container position-relative pt-50">
-							<div class="text-center">
-								<h1 class="font-48 text-white">Rocket start your<br> project development with Pangong.</h1>
-								<h4 class="text-white mt-15 mb-15">A professional and developer-friendly UI framework.</h4>
-								<div class="text-white">24x7 Support  <span class="font-11">&nbsp;&#9679;&nbsp;</span>  Free updates forever</div>
-								<div class="play-wrap">
-									<a href="#" id="video_play"><span data-src="https://www.youtube.com/watch?v=AdF6W0_nIP8" data-poster="dist/img/landing-pg/herodemo1.png" data-lity class="play-btn"></span></a>
-									<span class="font-weight-600">Watch Video</span>
-								</div>
-							</div>
-						</div>
-						 <div id="owl_demo_2" class="owl-carousel owl-theme dots-on-item mt-60">
-							<div class="item"><a class="d-block" href="dashboard1.html" target="_blank"><img src="dist/img/landing-pg/herodemo1.png" alt="Owl Image"></a></div>
-							<div class="item"><a class="d-block" href="dashboard2.html" target="_blank"><img src="dist/img/landing-pg/herodemo2.png" alt="Owl Image"></a></div>
-							<div class="item"><a class="d-block" href="dashboard3.html" target="_blank"><img src="dist/img/landing-pg/herodemo3.png" alt="Owl Image"></a></div>
-						</div>
-					</section>
-					<!-- /Preview Sec -->
-					
-					<!-- Design Sec -->
-					<section class="hk-landing-sec pb-50">
-						<div class="container">
-							<h2 class="text-center">Designed and developed <span class="text-primary">for developers.</span></h2>
-							<div class="row mt-50 text-center">
-								<div class="col-lg-4 mb-30">
-									<h5 class="mb-20">
-										<span class="d-flex align-items-center justify-content-center">
-											<span class="feather-icon text-primary mr-15"><i data-feather="layout"></i></span>Flexible Framework
-										</span>
-									</h5>
-									<p>A Bootstrap 4.1.X & Sass based solid core and well-architected framework works for all screens and modern browsers. You can easily be able to develop limitless customized projects.</p>
-								</div>
-								<div class="col-lg-4 mb-30">
-									<h5 class="mb-20">
-										<span class="d-flex align-items-center justify-content-center">
-											<span class="feather-icon text-success mr-15"><i data-feather="code"></i></span>Code Structure
-										</span>
-									</h5>
-									<p>HTML5 validated clean code is focused - keeping it simple and orderly. Every function, class, module exposes a single-minded attitude to remain entirely undistracted.</p>
-								</div>
-								<div class="col-lg-4 mb-30">
-									<h5 class="mb-20">
-										<span class="d-flex align-items-center justify-content-center">
-											<span class="feather-icon text-purple mr-15"><i data-feather="fast-forward"></i></span>Boost Up Speed
-										</span>
-									</h5>
-									<p>A ton of pre-built material that will genuinely improve D2D process ten folds, allowing Front-End Developrers to nerd out on actually building stuff, rather than editing pixel distances.</p>
-								</div>
-							</div>
-						</div>
-					</section>
-					<!-- /Design Sec -->
-					
-					<!-- Pages Sec -->
-					<section id="pages_sec" class="hk-landing-sec bg-white pb-65">
-						<div class="container">
-							<h2 class="text-center">A bunch of <span class="text-primary">boilerplate pages</span> to help you kick start.</h2>
-							<div class="hk-row mt-50 text-center">
-								<div class="col-lg-4 col-sm-6">
-									<a href="profile.html" target="_blank">
-										<div class="card shadow-hover">
-											<img class="card-img-top" src="dist/img/landing-pg/profile.jpg" alt="Card image cap">
-											<div class="card-footer text-dark">
-												Profile
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="col-lg-4 col-sm-6">
-									<a href="activity.html" target="_blank">
-										<div class="card shadow-hover">
-											<img class="card-img-top" src="dist/img/landing-pg/activity.jpg" alt="Card image cap">
-											<div class="card-footer text-dark">
-												Activity
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="col-lg-4 col-sm-6">
-									<a href="invoice.html" target="_blank">
-										<div class="card shadow-hover">
-											<img class="card-img-top" src="dist/img/landing-pg/invoice.jpg" alt="Card image cap">
-											<div class="card-footer text-dark">
-												Invoice
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="col-lg-4 col-sm-6">
-									<a href="faq.html" target="_blank">
-										<div class="card shadow-hover">
-											<img class="card-img-top" src="dist/img/landing-pg/faq.jpg" alt="Card image cap">
-											<div class="card-footer text-dark">
-												Faq
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="col-lg-4 col-sm-6">
-									<a href="gallery.html" target="_blank">
-										<div class="card shadow-hover">
-											<img class="card-img-top" src="dist/img/landing-pg/gallery.jpg" alt="Card image cap">
-											<div class="card-footer text-dark">
-												Gallery
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="col-lg-4 col-sm-6">	
-									<a href="signup.html" target="_blank">
-										<div class="card shadow-hover">
-											<img class="card-img-top" src="dist/img/landing-pg/signupcover.jpg" alt="Card image cap">
-											<div class="card-footer text-dark">
-												Signup Cover
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="col-lg-4 col-sm-6">	
-									<a href="signup-simple.html" target="_blank">
-										<div class="card shadow-hover">
-											<img class="card-img-top" src="dist/img/landing-pg/signup.jpg" alt="Card image cap">
-											<div class="card-footer text-dark">
-												Signup
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="col-lg-4 col-sm-6">	
-									<a href="login.html" target="_blank">
-										<div class="card shadow-hover">
-											<img class="card-img-top" src="dist/img/landing-pg/logincover.jpg" alt="Card image cap">
-											<div class="card-footer text-dark">
-												Login Cover
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="col-lg-4 col-sm-6">	
-									<a href="login-simple.html" target="_blank">
-										<div class="card shadow-hover">
-											<img class="card-img-top" src="dist/img/landing-pg/login.jpg" alt="Card image cap">
-											<div class="card-footer text-dark">
-												Login
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="col-lg-4 col-sm-6">	
-									<a href="forgot-password.html" target="_blank">
-										<div class="card shadow-hover">
-											<img class="card-img-top" src="dist/img/landing-pg/forgotpwd.jpg" alt="Card image cap">
-											<div class="card-footer text-dark">
-												Forgot Password
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="col-lg-4 col-sm-6">
-									<a href="reset-password.html" target="_blank">
-										<div class="card shadow-hover">
-											<img class="card-img-top" src="dist/img/landing-pg/resetpwd.jpg" alt="Card image cap">
-											<div class="card-footer text-dark">
-												Reset Password
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="col-lg-4 col-sm-6">	
-									<a href="lock-screen.html" target="_blank">
-										<div class="card shadow-hover">
-											<img class="card-img-top" src="dist/img/landing-pg/lockscreen.jpg" alt="Card image cap">
-											<div class="card-footer text-dark">
-												Lock Screen
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="col-lg-4 col-sm-6">	
-									<a href="404.html" target="_blank">
-										<div class="card shadow-hover">
-											<img class="card-img-top" src="dist/img/landing-pg/error404.jpg" alt="Card image cap">
-											<div class="card-footer text-dark">
-												Error 404
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="col-lg-4 col-sm-6">	
-									<a href="maintenance.html" target="_blank">
-										<div class="card shadow-hover">
-											<img class="card-img-top" src="dist/img/landing-pg/maintenance.jpg" alt="Card image cap">
-											<div class="card-footer text-dark">
-												Maintenance
-											</div>
-										</div>
-									</a>
-								</div>
-							</div>
-						</div>
-					</section>
-					<!-- /Pages Sec -->
-					
-					<!-- Tech Sec -->
-					<section class="hk-landing-sec pb-50">
-						<div class="container">
-							<div class="row">
-								<div class="d-flex align-items-center col-lg-5 mb-30">
-									<img class="img-fluid" src="dist/img/landing-pg/technologo.png" alt="Pangong"/>
-								</div>
-								<div class="col-lg-7">
-									<h2>Powerful yet easy-to-use framework built with <span class="text-primary">Bootstrap 4.1.3</span></h2>
-									<div class="row mt-50">
-										<div class="col-sm-6 mb-30">
-											<h5 class="mb-20">
-												Bootstrap 4.1.3
-											</h5>
-											<p>Pangong is built with the world's most popular front-end component library with custom css and components.</p>
-										</div>
-										<div class="col-sm-6 mb-30">
-											<h5 class="mb-20">
-												Preprocessor - Sass
-											</h5>
-											<p>Built with Sass following a completely modular approach. Easy to understand, light weight and extendible.</p>
-										</div>
-										<div class="col-sm-6 mb-30">
-											<h5 class="mb-20">
-												NPM - Node js
-											</h5>
-											<p>NPM manages project dependencies by compiling open source libraries of reusable code in seconds.</p>
-										</div>
-										<div class="col-sm-6 mb-30">
-											<h5 class="mb-20">
-												Jquery 3.3.1
-											</h5>
-											<p>Simplified HTML document traversing, event handling, and animating for rapid web development.</p>
-										</div>
-										<div class="col-sm-6 mb-30">
-											<h5 class="mb-20">
-												Powerful CLI - Grunt
-											</h5>
-											<p>A task automation tool. Compile and do changes with the introduced grunt command line interface.</p>
-										</div>
-										<div class="col-sm-6 mb-30">
-											<h5 class="mb-20">
-												API Usage
-											</h5>
-											<p>Google maps are built using updated API. Pangong also supports twitter to show live feeds.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<!-- /Tech Sec -->
-					
-					<!-- Apps Sec -->
-					<section id="apps_sec" class="hk-landing-sec bg-white pb-65">
-						<div class="container">
-							<h2 class="text-center">Apps are designed considering <span class="text-primary">UX</span> in mind.</h2>
-							<div class="hk-row mt-50 text-center">
-								<div class="col-md-6 col-sm-12">
-									<a href="chats.html" target="_blank">
-										<div class="card shadow-hover">
-											<img class="card-img-top" src="dist/img/landing-pg/chatapp.png" alt="Card image cap">
-											<div class="card-footer text-dark">
-												Chats
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="col-md-6 col-sm-12">
-									<a href="email.html" target="_blank">
-										<div class="card shadow-hover">
-											<img class="card-img-top" src="dist/img/landing-pg/emailapp.png" alt="Card image cap">
-											<div class="card-footer text-dark">
-												Email
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="col-md-6 col-sm-12">
-									<a href="calendar.html" target="_blank">
-										<div class="card shadow-hover">
-											<img class="card-img-top" src="dist/img/landing-pg/calenderapp.png" alt="Card image cap">
-											<div class="card-footer text-dark">
-												Calendar
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="col-md-6 col-sm-12">
-									<a href="file-manager.html">
-										<div class="card shadow-hover">
-											<div class="card-img position-relative">
-												<img class="card-img-top d-block" src="dist/img/landing-pg/fileuploadapp.png" alt="Card image cap">
-											</div>
-											<div class="card-footer text-dark">
-												File Manager
-											</div>
-										</div>
-									</a>
-								</div>
-							</div>
-						</div>
-					</section>
-					<!-- Apps Sec -->
-					
+				<div class="col-xl-12">					
 					<!-- Utilities Sec -->
 					<section class="hk-landing-sec pb-35">
 						<div class="container">
-							<h2 class="text-center">Smooth<span class="text-primary"> realtime collaboration</span> of UI Components and advanced functionality to your web applications.</h2>
+							<h2 class="text-center">Selamat Datang di SIG Aksesibilitas Ibu dan Anak</h2>
+							<p class="text-center mt-4">SIG Aksesibilitas Ibu dan Anak merupakan sistem informasi berbasis geografis yang menampilkan persebaran dan indeks aksesibilitas fasilitas kesehatan ibu dan anak yang berada di wilayah kota Bandarlampung. Aksesibilitas merupakan</p>
 							<div class="row mt-50">
 								<div class="col-lg-3 col-sm-6 mb-45">
 									<h5 class="mb-20">
@@ -469,317 +138,12 @@
 						</div>
 					</section>
 					<!-- /Utilities Sec -->
-					
-					<!-- Features Sec -->
-					<section id="features_sec" class="hk-landing-sec bg-light-10 pb-65">
-						<div class="container text-center">
-							<h2 class="mb-10"><span class="text-primary">Unlimited</span> features</h2>
-							<div class="row justify-content-center mt-50">
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature1.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										24x7 Support
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature2.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Online Documentation
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature3.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Free Updates Lifetime
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature4.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Fast Loading Time
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature5.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Light-weighted
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature6.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Clean Code
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature7.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Responsive Layout
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature8.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Ready to use demos
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature9.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Lots of widgets
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature10.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										1000+ UI Components
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature11.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Font Icons
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature12.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Google Maps
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature13.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Twitter Feed Jquery
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature14.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Google Web Fonts
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature15.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Lightbox Gallery
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature16.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Tinymce Editor
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature17.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Date Range Picker
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature18.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Color Picker
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature19.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Multi File Upload
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature20.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Chat App
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature21.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Calendar App
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature22.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Mail App
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature23.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Carousel
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature24.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Owl Slider
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature25.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Modals
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature26.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Menu Options
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature27.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Tabs
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature28.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Data Table Plugin
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature29.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Form Validation
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature30.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Authentication Pages
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature31.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Error Pages
-									</div>
-								</div>
-								<div class="feature-block">
-									<div class="card">
-										<img class="img-fluid" src="dist/img/landing-pg/feature32.png" alt="Card image cap">
-									</div>
-									<div class="feature-cap">
-										Embeds
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<!-- /Features Sec -->
-					
-					<!-- Faq Sec -->
-					<section id="faq_sec" class="hk-landing-sec pb-25">
-						<div class="container">
-							<h2 class="mb-10">FAQ</h2>
-							<div class="mt-50">
-								<div class="row">
-									<div class="col-sm-6 mb-55">
-										<h5 class="mb-15">What's your refund policy?</h5>
-										<p>A refund or credit on a purchase is not granted unless one of the promises given by the author in section 21 has been breached, or a refund is required under the <a href="https://themeforest.net/page/customer_refund_policy" target="_blank">Envato Market Refund Rules</a>.</p>
-									</div>
-									<div class="col-sm-6 mb-55">
-										<h5 class="mb-15">What does support include?</h5>
-										<p>Our support mainly covers pre-sale questions, basic front-end development questions, bug reports and help with included 3rd party assets through our support <a href="https://hencework.ticksy.com" target="_blank">https://hencework.ticksy.com</a></p>
-									</div>
-									<div class="col-sm-6 mb-55">
-										<h5 class="mb-15">What's not covered by support?</h5>
-										<p>Individual customization requests are not supported, but we tend to advise and show direction on such requests. Also server side implementation and backend integration issues are not covered since Pangong is an HTML template with front-end support.</p>
-									</div>
-									<div class="col-sm-6 mb-55">
-										<h5 class="mb-15">Custom Jobs</h5>
-										<p>You are only eligible for requesting custom jobs if you have a purchase key and can only be take up after mutual agreement on the costing, based on the work involved and the availability of our team members.</p>
-									</div>
-									<div class="col-sm-6 mb-55">
-										<h5 class="mb-15">A React / Angular version in future days?</h5>
-										<p>We are currently not planning to release a react or an angular version. But collaborators are always welcome.</p>
-									</div>
-									<div class="col-sm-6 mb-55">
-										<h5 class="mb-15">Will you provide RTL Support?</h5>
-										<p>Yes. We are currently working on RTL and will be provided in the next update.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<!-- /Faq Sec -->
+				
 					
 					<!-- Adv Sec -->
 					<section class="hk-landing-sec bg-gradient-primary">
-						<div class="container text-center">
-							<h5 class="text-sun mb-15">Additional FREE Landing Page worth $16</h5>
-							<h1 class="text-white mb-10">Full package for the perfect price</h1>
-							<h1 class="display-2 text-white mb-15">Only $32</h1>
-							<h6 class="text-white text-uppercase mb-10">Pay once, use forever.</h6>
-							<a class="btn btn-cyan btn-lg btn-rounded w-xl-400p w-200p mt-30" href="#">Buy Pangong Now</a>
+						<div class="container">
+							<div id="map" style="height: 550px"></div>
 						</div>
 					</section>
 					<!-- /Adv Sec -->
@@ -831,6 +195,27 @@
     <script src="assets/dist/js/lightgallery-all.js"></script>
     <script src="assets/dist/js/landing-data.js"></script>
     <script src="assets/dist/js/init.js"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPNpyLAPlS77x4m8e3NdunZAx2VcGme6w&callback=initMap&libraries=&v=weekly"
+		async>
+	</script>
+	<script>
+		// Initialize and add the map
+		function initMap() {
+
+			const uluru = { lat:-5.375130, lng:105.253640 };
+
+			const map = new google.maps.Map(document.getElementById("map"), {
+				zoom: 11,
+				center: uluru,
+			});
+
+			const marker = new google.maps.Marker({
+				position: uluru,
+				map: map,
+			});
+		}
+    </script>
 	</body>
 
 </html>	
