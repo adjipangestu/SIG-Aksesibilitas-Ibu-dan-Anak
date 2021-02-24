@@ -26,6 +26,9 @@ License: You must have a valid license purchased only from themeforest to legall
 
     <!-- Custom CSS -->
     <link href="{{ asset('assets/dist/css/style.css') }}" rel="stylesheet" type="text/css">
+
+    <!-- Toastr CSS -->
+    <link href="{{ asset('assets/vendors/jquery-toast-plugin/dist/jquery.toast.min.css') }}" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -89,6 +92,9 @@ License: You must have a valid license purchased only from themeforest to legall
     
     <!-- Init JavaScript -->
     <script src="{{ asset ('assets/dist/js/init.js') }}"></script>
+
+    <!-- Toastr JS -->
+    <script src="{{ asset('assets/vendors/jquery-toast-plugin/dist/jquery.toast.min.js') }}"></script>
 	
 </body>
 

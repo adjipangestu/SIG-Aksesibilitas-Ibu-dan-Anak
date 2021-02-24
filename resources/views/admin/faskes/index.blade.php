@@ -107,4 +107,20 @@
             });
         } );
     </script>
+    @if ($message = Session::get('success'))
+    <script>
+        $(document).ready(function() {
+            $.toast({
+                heading: 'Berhasil!',
+                text: '{{ $message }}',
+                position: 'top-right',
+                loaderBg:'#00acf0',
+                class: 'jq-toast-success',
+                hideAfter: 3500, 
+                stack: 6,
+                showHideTransition: 'fade'
+            });
+        })
+    </script>
+    @endif
 @endpush

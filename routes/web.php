@@ -35,6 +35,7 @@ Route::group(['prefix' => 'admin'], function(){
 
         //this add faskes route
         Route::get('/faskes/add', 'Admin\FaskesController@add')->name('admin.faskes.add');
+        Route::post('/faskes/add/do', 'Admin\FaskesController@addDo')->name('admin.faskes.add.do');
 
         //this route edit data faskes
         Route::get('/faskes/edit/{id}', 'Admin\FaskesController@edit')->name('admin.faskes.edit');
