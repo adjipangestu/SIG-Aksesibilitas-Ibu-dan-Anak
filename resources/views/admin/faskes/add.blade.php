@@ -48,16 +48,16 @@
                                 <input class="form-control" name="tahun" placeholder="Tahun Terbit" value="" type="text">
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <label for="email">Alamat</label>
-                            <input class="form-control" id="mapsearch" placeholder="Alamat" name="alamat" type="text">
-                        </div>
                         <div class="form-group">
                             <label for="email">Kelurahan</label>
                             <select name="kelurahan" class="form-control" id="">
                                 <option value="">Pilih</option>
                             </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Alamat</label>
+                            <input class="form-control" id="mapsearch" placeholder="Alamat" name="alamat" type="text">
                         </div>
                         <hr>
                         <div id="map" style="height: 550px"></div>
