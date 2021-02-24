@@ -87,12 +87,16 @@ class JarakController extends Controller
         $data = $faskes->get();
         $group = $data->groupBy('nama_kecamatan');
 
+        $datafaskes = DB::table('datafaskes')->count();
+
+        echo '<h1>Jumlah Faskes : '. $datafaskes  . '</h1>';
+
         foreach ($group as $key => $value) {
-            echo '<h3>'. $key . '<h3><ul>';
+            echo '<h3>'. $key . '<h3> Jumlah Input : '. count($value) . ' Kurang :'. ($datafaskes -  count($value)) .'<ul>';
             foreach ($value as $item) {
                 echo '<li>' . $item->nama_faskes . '</li>'; 
             }
-            echo '</ul><br>';
+            echo '</ul><br><hr>';
         }
         // return $group;
     }
