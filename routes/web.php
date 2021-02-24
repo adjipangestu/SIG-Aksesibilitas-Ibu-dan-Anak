@@ -39,6 +39,7 @@ Route::group(['prefix' => 'admin'], function(){
 
         //this route edit data faskes
         Route::get('/faskes/edit/{id}', 'Admin\FaskesController@edit')->name('admin.faskes.edit');
+        Route::post('/faskes/edit/do/{id}', 'Admin\FaskesController@editDo')->name('admin.faskes.edit.do');
 
         //this route delete data faskes
         Route::get('/faskes/delete/{id}', 'Admin\FaskesController@delete')->name('admin.faskes.delete');
