@@ -8,6 +8,12 @@ use DB;
 
 class JarakController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('role:admin');
+    }
+    
     public function index()
     {
         $kecamatan = DB::table('kecamatan')->get();

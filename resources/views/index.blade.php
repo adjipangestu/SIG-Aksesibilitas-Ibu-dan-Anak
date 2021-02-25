@@ -41,12 +41,36 @@
 							<li class="nav-item mr-10">
 								<a class="nav-link" href="#">Version<span class="badge badge-soft-success badge-sm badge-pill ml-10">v 1.0</span></a>
 							</li>
+							@auth
+							<li class="nav-item mr-10">
+								<a class="nav-link" href="#"><strong>{{ Auth::user()->name }}</strong></a>
+							</li>
+							@endif
 						</ul>
 					</div>
 					<ul class="navbar-nav hk-navbar-content">
-						<li class="nav-item">
-							<a class="btn btn-outline-primary btn-rounded" href="#">Login</a>
-						</li>
+						@if (Route::has('login'))
+							<div class="top-right links">
+								@auth
+									@if (Auth::user()->role_id == 1)
+										<li class="nav-item">
+											<a class="btn btn-outline-primary btn-rounded" href="{{ route('admin.index') }}">Dashboard</a>
+										</li>
+									@elseif (Auth::user()->role_id == 2)
+										<li class="nav-item">
+											<a class="btn btn-outline-primary btn-rounded" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+											<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+												@csrf
+											</form>
+										</li>
+									@endif
+								@else
+									<li class="nav-item">
+										<a class="btn btn-outline-primary btn-rounded" href="{{ route('login') }}">Login</a>
+									</li>
+								@endauth
+							</div>
+						@endif
 					</ul>
 				</nav>
 			</div>	
@@ -62,7 +86,7 @@
 							<h2 class="text-center">Selamat Datang di SIG Aksesibilitas Ibu dan Anak</h2>
 							<p class="text-center mt-4">SIG Aksesibilitas Ibu dan Anak merupakan sistem informasi berbasis geografis yang menampilkan persebaran dan indeks aksesibilitas fasilitas kesehatan ibu dan anak yang berada di wilayah kota Bandarlampung. Aksesibilitas merupakan</p>
 							<div class="row mt-50">
-								<div class="col-lg-3 col-sm-6 mb-45">
+								<div class="col-lg-6">
 									<h5 class="mb-20">
 										<span class="d-flex align-items-center">
 											<span class="feather-icon text-pink mr-15"><i data-feather="underline"></i></span>
@@ -71,7 +95,7 @@
 									</h5>
 									<p>Easy styling with spacing, sizing, backgrounds, shadows and many more utilities.</p>
 								</div>
-								<div class="col-lg-3 col-sm-6 mb-45">
+								<div class="col-lg-6">
 									<h5 class="mb-20">
 										<span class="d-flex align-items-center">
 											<span class="feather-icon text-teal mr-15"><i data-feather="type"></i></span>
@@ -79,60 +103,6 @@
 										</span>	
 									</h5>
 									<p>The Typography, includes global settings, headings, body text, lists, responsive typography and more.</p>
-								</div>
-								<div class="col-lg-3 col-sm-6 mb-45">
-									<h5 class="mb-20">
-										<span class="d-flex align-items-center">
-											<span class="feather-icon text-orange mr-15"><i data-feather="command"></i></span>
-											Colors
-										</span>	
-									</h5>
-									<p>Play around contextual colors, 20+ base colors, 230+ color shades and many gradient color options.</p>
-								</div>
-								<div class="col-lg-3 col-sm-6 mb-45">
-									<h5 class="mb-20">
-										<span class="d-flex align-items-center">
-											<span class="feather-icon text-primary mr-15"><i data-feather="info"></i></span>	
-											Icons
-										</span>	
-									</h5>
-									<p>Over 1500 free icons. Each icon pack includes SVG or a webfont to easily add in css and html pages.</p>
-								</div>
-								<div class="col-lg-3 col-sm-6 mb-45">
-									<h5 class="mb-20">
-										<span class="d-flex align-items-center">
-											<span class="feather-icon text-green mr-15"><i data-feather="server"></i></span>
-											Forms
-										</span>	
-									</h5>
-									<p>A variety of form control styles, layouts, custom components, editor, form pickers, sliders and more.</p>
-								</div>
-								<div class="col-lg-3 col-sm-6 mb-45">
-									<h5 class="mb-20">
-										<span class="d-flex align-items-center">
-											<span class="feather-icon text-red mr-15"><i data-feather="list"></i></span>
-											Tables
-										</span>	
-									</h5>
-									<p>Add advance interaction controls like search, pagination & selectors, export using exclusive Data table.</p>
-								</div>
-								<div class="col-lg-3 col-sm-6 mb-45">
-									<h5 class="mb-20">
-										<span class="d-flex align-items-center">
-											<span class="feather-icon text-pumpkin mr-15"><i data-feather="pie-chart"></i></span>
-											Charts
-										</span>	
-									</h5>
-									<p>Interactive charts, complex charts, realtime data charts, pie & donut charts and more.</p>
-								</div>
-								<div class="col-lg-3 col-sm-6 mb-45">
-									<h5 class="mb-20">
-										<span class="d-flex align-items-center">
-											<span class="feather-icon text-violet mr-15"><i data-feather="map"></i></span>
-											Maps
-										</span>	
-									</h5>
-									<p>Vector and google maps integration for location hierarchies, basic map view, and key mapping features.</p>
 								</div>
 							</div>
 						</div>

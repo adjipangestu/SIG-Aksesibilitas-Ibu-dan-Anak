@@ -13,11 +13,11 @@
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 
 Auth::routes();
 
-Route::group(['prefix' => 'admin'], function(){
+Route::group(['prefix' => 'admin', 'middleware' => ['auth','role:admin']], function(){
     Route::get('/home', 'Admin\HomeController@index')->name('admin.index');
 
     Route::group(['prefix' => 'kelola-data'], function(){

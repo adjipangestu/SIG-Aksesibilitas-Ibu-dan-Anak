@@ -10,6 +10,12 @@ use DB;
 
 class KabupatenController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('role:admin');
+    }
+    
     public function index()
     {
         return view('admin.kabupaten.index');
