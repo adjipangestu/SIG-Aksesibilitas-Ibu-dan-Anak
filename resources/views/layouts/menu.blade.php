@@ -18,8 +18,11 @@
                             <ul id="dash_drp" class="nav flex-column collapse collapse-level-1">
                                 <li class="nav-item">
                                     <ul class="nav flex-column">
+                                        <li class="nav-item {{ Request::segment(3) == 'jenis-faskes' ? 'active' : ''}}">
+                                            <a class="nav-link" href="{{ route('admin.jenis_faskes.index') }}">Jenis Fasilitas Kesehatan</a>
+                                        </li>
                                         <li class="nav-item {{ Request::segment(3) == 'faskes' ? 'active' : ''}}">
-                                            <a class="nav-link" href="{{ route('admin.faskes.index') }}">Data Fasilitas Kesehatan</a>
+                                            <a class="nav-link" href="{{ route('admin.faskes.index') }}">Fasilitas Kesehatan</a>
                                         </li>
                                         <li class="nav-item {{ Request::segment(3) == 'jarak' ? 'active' : ''}}">
                                             <a class="nav-link" href="{{ route('admin.jarak.index') }}">Input Jarak</a>

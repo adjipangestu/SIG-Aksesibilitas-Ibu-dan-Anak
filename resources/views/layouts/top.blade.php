@@ -2,7 +2,7 @@
         <nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar">
             <a id="navbar_toggle_btn" class="navbar-toggle-btn nav-link-hover" href="javascript:void(0);"><span class="feather-icon"><i data-feather="menu"></i></span></a>
             <a class="navbar-brand" href="/admin">
-                <img class="brand-img d-inline-block" src="{{ asset('assets/dist/img/logo-light.png') }}" alt="brand" />
+                SIG AKIA
             </a>
             <ul class="navbar-nav hk-navbar-content">
                 <li class="nav-item dropdown dropdown-authentication">

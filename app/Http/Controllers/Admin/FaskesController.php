@@ -74,7 +74,7 @@ class FaskesController extends Controller
             'long.required' => 'Longitude tidak boleh kosong',
         ]);
 
-        $jarak = DB::table('datafaskes')->insert([
+        DB::table('datafaskes')->insert([
             'nama_faskes' => $request->input('nama_faskes'),
             'id_jam_buka' => $request->input('jam_buka'),
             'id_jenis_faskes' => $request->input('jenis_faskes'),

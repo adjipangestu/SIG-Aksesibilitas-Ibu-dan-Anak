@@ -30,20 +30,22 @@ Route::group(['prefix' => 'admin'], function(){
 
         //this route all data faskes
         Route::get('/faskes', 'Admin\FaskesController@index')->name('admin.faskes.index');
-
-        //this list data to datatable data faskes
         Route::get('/faskes/list', 'Admin\FaskesController@dataList')->name('admin.faskes.list');
-
-        //this add faskes route
         Route::get('/faskes/add', 'Admin\FaskesController@add')->name('admin.faskes.add');
         Route::post('/faskes/add/do', 'Admin\FaskesController@addDo')->name('admin.faskes.add.do');
-
-        //this route edit data faskes
         Route::get('/faskes/edit/{id}', 'Admin\FaskesController@edit')->name('admin.faskes.edit');
         Route::post('/faskes/edit/do/{id}', 'Admin\FaskesController@editDo')->name('admin.faskes.edit.do');
-
-        //this route delete data faskes
         Route::get('/faskes/delete/{id}', 'Admin\FaskesController@delete')->name('admin.faskes.delete');
+
+
+        //this route all data jenis faskes
+        Route::get('/jenis-faskes', 'Admin\JenisController@index')->name('admin.jenis_faskes.index');
+        Route::get('/jenis-faskes/list', 'Admin\JenisController@listJenis')->name('admin.jenis_faskes.list');
+        Route::get('/jenis-faskes/add', 'Admin\JenisController@add')->name('admin.jenis_faskes.add');
+        Route::post('/jenis-faskes/add/do', 'Admin\JenisController@addDo')->name('admin.jenis_faskes.add.do');
+        Route::get('/jenis-faskes/edit/{id}', 'Admin\JenisController@edit')->name('admin.jenis_faskes.edit');
+        Route::post('/jenis-faskes/edit/do/{id}', 'Admin\JenisController@editDo')->name('admin.jenis_faskes.edit.do');
+        Route::get('/jenis-faskes/delete/{id}', 'Admin\JenisController@delete')->name('admin.jenis_faskes.delete');
     });
 });
 
