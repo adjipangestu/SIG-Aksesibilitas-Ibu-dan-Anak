@@ -18,6 +18,9 @@
                             <ul id="dash_drp" class="nav flex-column collapse collapse-level-1">
                                 <li class="nav-item">
                                     <ul class="nav flex-column">
+                                        <li class="nav-item {{ Request::segment(3) == 'kabupaten' ? 'active' : ''}}">
+                                            <a class="nav-link" href="{{ route('admin.kabupaten.index') }}">Kabupaten</a>
+                                        </li>
                                         <li class="nav-item {{ Request::segment(3) == 'kelurahan' ? 'active' : ''}}">
                                             <a class="nav-link" href="{{ route('admin.kelurahan.index') }}">Kelurahan</a>
                                         </li>

@@ -58,7 +58,7 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('/kecamatan/delete/{id}', 'Admin\KecamatanController@delete')->name('admin.kecamatan.delete');
 
 
-        //this route all data kecamatan
+        //this route all data kelurahan
         Route::get('/kelurahan', 'Admin\KelurahanController@index')->name('admin.kelurahan.index');
         Route::get('/kelurahan/list', 'Admin\KelurahanController@listKelurahan')->name('admin.kelurahan.list');
         Route::get('/kelurahan/add', 'Admin\KelurahanController@add')->name('admin.kelurahan.add');
@@ -66,6 +66,16 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('/kelurahan/edit/{id}', 'Admin\KelurahanController@edit')->name('admin.kelurahan.edit');
         Route::post('/kelurahan/edit/do/{id}', 'Admin\KelurahanController@editDo')->name('admin.kelurahan.edit.do');
         Route::get('/kelurahan/delete/{id}', 'Admin\KelurahanController@delete')->name('admin.kelurahan.delete');
+
+
+        //this route all data kabupaten
+        Route::get('/kabupaten', 'Admin\KabupatenController@index')->name('admin.kabupaten.index');
+        Route::get('/kabupaten/list', 'Admin\KabupatenController@listKabupaten')->name('admin.kabupaten.list');
+        Route::get('/kabupaten/add', 'Admin\KabupatenController@add')->name('admin.kabupaten.add');
+        Route::post('/kabupaten/add/do', 'Admin\KabupatenController@addDo')->name('admin.kabupaten.add.do');
+        Route::get('/kabupaten/edit/{id}', 'Admin\KabupatenController@edit')->name('admin.kabupaten.edit');
+        Route::post('/kabupaten/edit/do/{id}', 'Admin\KabupatenController@editDo')->name('admin.kabupaten.edit.do');
+        Route::get('/kabupaten/delete/{id}', 'Admin\KabupatenController@delete')->name('admin.kabupaten.delete');
     });
 });
 
