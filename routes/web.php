@@ -48,14 +48,24 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('/jenis-faskes/delete/{id}', 'Admin\JenisController@delete')->name('admin.jenis_faskes.delete');
 
 
-         //this route all data kecamatan
-         Route::get('/kecamatan', 'Admin\KecamatanController@index')->name('admin.kecamatan.index');
-         Route::get('/kecamatan/list', 'Admin\KecamatanController@listKecamatan')->name('admin.kecamatan.list');
-         Route::get('/kecamatan/add', 'Admin\KecamatanController@add')->name('admin.kecamatan.add');
-         Route::post('/kecamatan/add/do', 'Admin\KecamatanController@addDo')->name('admin.kecamatan.add.do');
-         Route::get('/kecamatan/edit/{id}', 'Admin\KecamatanController@edit')->name('admin.kecamatan.edit');
-         Route::post('/kecamatan/edit/do/{id}', 'Admin\KecamatanController@editDo')->name('admin.kecamatan.edit.do');
-         Route::get('/kecamatan/delete/{id}', 'Admin\KecamatanController@delete')->name('admin.kecamatan.delete');
+        //this route all data kecamatan
+        Route::get('/kecamatan', 'Admin\KecamatanController@index')->name('admin.kecamatan.index');
+        Route::get('/kecamatan/list', 'Admin\KecamatanController@listKecamatan')->name('admin.kecamatan.list');
+        Route::get('/kecamatan/add', 'Admin\KecamatanController@add')->name('admin.kecamatan.add');
+        Route::post('/kecamatan/add/do', 'Admin\KecamatanController@addDo')->name('admin.kecamatan.add.do');
+        Route::get('/kecamatan/edit/{id}', 'Admin\KecamatanController@edit')->name('admin.kecamatan.edit');
+        Route::post('/kecamatan/edit/do/{id}', 'Admin\KecamatanController@editDo')->name('admin.kecamatan.edit.do');
+        Route::get('/kecamatan/delete/{id}', 'Admin\KecamatanController@delete')->name('admin.kecamatan.delete');
+
+
+        //this route all data kecamatan
+        Route::get('/kelurahan', 'Admin\KelurahanController@index')->name('admin.kelurahan.index');
+        Route::get('/kelurahan/list', 'Admin\KelurahanController@listKelurahan')->name('admin.kelurahan.list');
+        Route::get('/kelurahan/add', 'Admin\KelurahanController@add')->name('admin.kelurahan.add');
+        Route::post('/kelurahan/add/do', 'Admin\KelurahanController@addDo')->name('admin.kelurahan.add.do');
+        Route::get('/kelurahan/edit/{id}', 'Admin\KelurahanController@edit')->name('admin.kelurahan.edit');
+        Route::post('/kelurahan/edit/do/{id}', 'Admin\KelurahanController@editDo')->name('admin.kelurahan.edit.do');
+        Route::get('/kelurahan/delete/{id}', 'Admin\KelurahanController@delete')->name('admin.kelurahan.delete');
     });
 });
 

@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Data Kecamatan')
+@section('title', 'Data Kelurahan')
 
 @push('css')
     <!-- Data Table CSS -->
@@ -14,12 +14,12 @@
     <div class="container">
         <!-- Title -->
         <div class="hk-pg-header">
-            <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="database"></i></span></span>Data Kecamatan</h4>
+            <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="database"></i></span></span>Data Kelurahan</h4>
         </div>
         <!-- /Title -->
 
         <section class="hk-sec-wrapper">
-            <h5 class="hk-sec-title"><a href="{{ route('admin.kecamatan.add') }}" class="btn btn-primary">Tambah Data</a></h5>
+            <h5 class="hk-sec-title"><a href="{{ route('admin.kelurahan.add') }}" class="btn btn-primary">Tambah Data</a></h5>
             <div class="row">
                 <div class="col-sm">
                     <div class="table-wrap">
@@ -27,10 +27,8 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
+                                    <th>Kelurahan</th>
                                     <th>Kecamatan</th>
-                                    <th>Latitude</th>
-                                    <th>Longitude</th>
-                                    <th>Kabupaten</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -81,15 +79,13 @@
                     $('.dt-buttons > .btn').addClass('btn-outline-light btn-sm');
                 },
                 ajax:{
-                    url: "{{ route('admin.kecamatan.list') }}",
+                    url: "{{ route('admin.kelurahan.list') }}",
                     type: 'GET',
                 },
                 columns: [
                     { data: 'DT_RowIndex', name:'DT_RowIndex' },
+                    { data: 'nama_kelurahan', name:'nama_kelurahan' },
                     { data: 'nama_kecamatan', name:'nama_kecamatan' },
-                    { data: 'latitude', name: 'latitude' },
-                    { data: 'longitude', name: 'longitude' },
-                    { data: 'nama_kabupaten', name: 'nama_kabupaten' },
                     { data: 'action', name: 'action' },
                 ]
             });
