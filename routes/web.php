@@ -46,6 +46,16 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('/jenis-faskes/edit/{id}', 'Admin\JenisController@edit')->name('admin.jenis_faskes.edit');
         Route::post('/jenis-faskes/edit/do/{id}', 'Admin\JenisController@editDo')->name('admin.jenis_faskes.edit.do');
         Route::get('/jenis-faskes/delete/{id}', 'Admin\JenisController@delete')->name('admin.jenis_faskes.delete');
+
+
+         //this route all data kecamatan
+         Route::get('/kecamatan', 'Admin\KecamatanController@index')->name('admin.kecamatan.index');
+         Route::get('/kecamatan/list', 'Admin\KecamatanController@listKecamatan')->name('admin.kecamatan.list');
+         Route::get('/kecamatan/add', 'Admin\KecamatanController@add')->name('admin.kecamatan.add');
+         Route::post('/kecamatan/add/do', 'Admin\KecamatanController@addDo')->name('admin.kecamatan.add.do');
+         Route::get('/kecamatan/edit/{id}', 'Admin\KecamatanController@edit')->name('admin.kecamatan.edit');
+         Route::post('/kecamatan/edit/do/{id}', 'Admin\KecamatanController@editDo')->name('admin.kecamatan.edit.do');
+         Route::get('/kecamatan/delete/{id}', 'Admin\KecamatanController@delete')->name('admin.kecamatan.delete');
     });
 });
 
