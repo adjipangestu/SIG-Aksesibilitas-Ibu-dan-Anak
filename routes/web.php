@@ -12,8 +12,10 @@
 */
 
 Route::get('/', 'IndexController@index')->name('index');
+Route::get('/result', 'IndexController@result')->name('persebaran.result');
 Route::get('/persebaran', 'IndexController@persebaran')->name('persebaran');
 Route::get('/persebaran/list', 'IndexController@persebaranList')->name('persebaran.list');
+
 
 Auth::routes();
 
