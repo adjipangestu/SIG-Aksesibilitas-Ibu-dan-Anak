@@ -8,6 +8,9 @@
 					
 					<div class="collapse navbar-collapse ml-auto" id="navbarCollapseAlt">
 						<ul class="navbar-nav ml-auto">
+                            <li class="nav-item mr-10">
+								<a class="nav-link {{ Request::segment(1) == 'persebaran' ? 'active' : ''}}" href="{{ route('persebaran') }}">Peta Persebaran</a>
+							</li>
 							<li class="nav-item mr-10">
 								<a class="nav-link" href="#">Version<span class="badge badge-soft-success badge-sm badge-pill ml-10">v 1.0</span></a>
 							</li>

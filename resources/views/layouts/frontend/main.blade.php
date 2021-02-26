@@ -40,9 +40,12 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="assets/vendors/popper.js/dist/umd/popper.min.js"></script>
     <script src="assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-	
-	<!-- Owl JavaScript -->
+
+    <!-- Owl JavaScript -->
     <script src="assets/vendors/owl.carousel/dist/owl.carousel.min.js"></script>
+	
+	<!-- Slimscroll JavaScript -->
+    <script src="{{ asset ('assets/dist/js/jquery.slimscroll.js') }}"></script>
 	
 	<!-- FeatherIcons JavaScript -->
     <script src="assets/dist/js/feather.min.js"></script>
@@ -55,27 +58,9 @@
     <script src="assets/dist/js/lightgallery-all.js"></script>
     <script src="assets/dist/js/landing-data.js"></script>
     <script src="assets/dist/js/init.js"></script>
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPNpyLAPlS77x4m8e3NdunZAx2VcGme6w&callback=initMap&libraries=&v=weekly"
-		async>
-	</script>
-	<script>
-		// Initialize and add the map
-		function initMap() {
 
-			const uluru = { lat:-5.375130, lng:105.253640 };
-
-			const map = new google.maps.Map(document.getElementById("map"), {
-				zoom: 11,
-				center: uluru,
-			});
-
-			const marker = new google.maps.Marker({
-				position: uluru,
-				map: map,
-			});
-		}
-    </script>
+    @stack('js')
+	
 	</body>
 
 </html>	

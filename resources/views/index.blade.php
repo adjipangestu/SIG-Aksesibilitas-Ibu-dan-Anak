@@ -11,7 +11,7 @@
 					<section class="hk-landing-sec pb-35">
 						<div class="container">
 							<h2 class="text-center">Selamat Datang di SIG Aksesibilitas Ibu dan Anak</h2>
-							<p class="text-center mt-4">SIG Aksesibilitas Ibu dan Anak merupakan sistem informasi berbasis geografis yang menampilkan persebaran dan indeks aksesibilitas fasilitas kesehatan ibu dan anak yang berada di wilayah kota Bandarlampung. Terdapat beberapa jenis fasiitas kesehatan diantaranya sebga berikut ini</p>
+							<p class="text-center mt-4">SIG Aksesibilitas Ibu dan Anak merupakan sistem informasi berbasis geografis yang menampilkan persebaran dan indeks aksesibilitas fasilitas kesehatan ibu dan anak yang berada di wilayah kota Bandarlampung. Terdapat beberapa jenis fasilitas kesehatan diantaranya sebga berikut ini</p>
 							<div class="row mt-50">
 								@foreach($jenis_faskes as $item)
 								<div class="col-lg-6 col-sm-6 mb-45">
@@ -60,3 +60,27 @@
         </div>
         <!-- /Main Content -->
 @endsection
+
+@push('js')
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPNpyLAPlS77x4m8e3NdunZAx2VcGme6w&callback=initMap&libraries=&v=weekly"
+		async>
+	</script>
+	<script>
+		// Initialize and add the map
+		function initMap() {
+
+			const uluru = { lat:-5.375130, lng:105.253640 };
+
+			const map = new google.maps.Map(document.getElementById("map"), {
+				zoom: 11,
+				center: uluru,
+			});
+
+			const marker = new google.maps.Marker({
+				position: uluru,
+				map: map,
+			});
+		}
+    </script>
+@endpush
