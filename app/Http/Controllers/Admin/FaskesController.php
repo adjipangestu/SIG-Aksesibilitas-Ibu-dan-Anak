@@ -104,6 +104,10 @@ class FaskesController extends Controller
 
         $faskes = DB::table('datafaskes')->where('id_faskes', $id)->first();
 
+        if(!$faskes){
+            return redirect()->route('admin.faskes.index')->with('success', 'Data tidak ditemukan atau sudah dihapus');
+        }
+
         return view('admin.faskes.edit', [
             'jam_buka' => $jam_buka, 
             'jenis_faskes' => $jenis_faskes, 
