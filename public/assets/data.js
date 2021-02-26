@@ -1,13 +1,11 @@
 function initMap() {
-    var directionsDisplay = new google.maps.DirectionsRenderer;
-    var directionsService = new google.maps.DirectionsService;
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 11.5,
         center: {
             lat: -5.375130,
             lng: 105.253640
         }
-    })
+    });
 
 
     const  enggalCoords = [{
@@ -1639,7 +1637,7 @@ function initMap() {
     }, {
         lat: -5.42017052499998,
         lng: 105.26979638400005
-    }]
+    }];
 
     const kedatonCoords = [{
         lat: -5.380680732999922,
@@ -3813,7 +3811,7 @@ function initMap() {
     }, {
         lat: -5.380680732999922,
         lng: 105.27196454500003
-    }]
+    }];
 
     const rajabasaCoords = [{
         lat: -5.328094325999912,
@@ -7607,7 +7605,7 @@ function initMap() {
     }, {
         lat: -5.328094325999912,
         lng: 105.26089468200009
-    }]
+    }];
 
     const tjsenangCoords = [{
         lat: -5.348063818321881,
@@ -9298,7 +9296,7 @@ function initMap() {
     }, {
         lat: -5.348063818321881,
         lng: 105.2906994579684
-    }]
+    }];
 
     const langkapuraCoords = [{
         lat: -5.382043687999984,
@@ -11208,7 +11206,7 @@ function initMap() {
     }, {
         lat: -5.382043687999984,
         lng: 105.24630182300005
-    }]
+    }];
 
     const sukarameCoords = [{
         lat: -5.360187141389806,
@@ -14414,7 +14412,7 @@ function initMap() {
     }, {
         lat: -5.360187141389806,
         lng: 105.30754659490866
-    }]
+    }];
 
     const tbbCoords = [{
         lat: -5.429793593999944,
@@ -17869,7 +17867,7 @@ function initMap() {
     }, {
         lat: -5.429793593999944,
         lng: 105.23724014400008
-    }]
+    }];
 
     const tbsCoords = [{
         lat: -5.425299024999942,
@@ -20319,7 +20317,7 @@ function initMap() {
     }, {
         lat: -5.425299024999942,
         lng: 105.24854642600005
-    }]
+    }];
 
     const tbtCoords = [{
         lat: -5.455998448061651,
@@ -23021,7 +23019,7 @@ function initMap() {
     }, {
         lat: -5.455998448061651,
         lng: 105.26360256447416
-    }]
+    }];
 
     const tbuCoords = [{
         lat: -5.425997440999909,
@@ -25549,7 +25547,7 @@ function initMap() {
     }, {
         lat: -5.425997440999909,
         lng: 105.25885363400005
-    }]
+    }];
 
     const tkbCoords = [{
         lat: -5.384066393999921,
@@ -29787,7 +29785,7 @@ function initMap() {
     }, {
         lat: -5.384066393999921,
         lng: 105.24709929300005
-    }]
+    }];
 
     const tkpCoords = [{
         lat: -5.402594194999923,
@@ -32144,7 +32142,7 @@ function initMap() {
     }, {
         lat: -5.402594194999923,
         lng: 105.26025757500013
-    }]
+    }];
 
     const tktCoords = [{
         lat: -5.408764616999941,
@@ -34195,7 +34193,7 @@ function initMap() {
     }, {
         lat: -5.408764616999941,
         lng: 105.26892722200007
-    }]
+    }];
 
     const kemilingCoords = [{
         lat: -5.369292173999986,
@@ -37443,7 +37441,7 @@ function initMap() {
     }, {
         lat: -5.369292173999986,
         lng: 105.21607223400004
-    }]
+    }];
 
     const labratuCoords = [{
         lat: -5.358116129999958,
@@ -39428,7 +39426,7 @@ function initMap() {
     }, {
         lat: -5.358116129999958,
         lng: 105.25065440300003
-    }]
+    }];
 
     const wayhalimCoords = [{
         lat: -5.372919369999986,
@@ -42394,7 +42392,7 @@ function initMap() {
     }, {
         lat: -5.372919369999986,
         lng: 105.27661106200007
-    }]
+    }];
 
     const bwCoords = [{
         lat: -5.429080604000015,
@@ -45729,7 +45727,7 @@ function initMap() {
     }, {
         lat: -5.429080604000015,
         lng: 105.29203937700004
-    }]
+    }];
 
     const pjgCoords = [{
         lat: -5.452781237999917,
@@ -49970,7 +49968,7 @@ function initMap() {
     }, {
         lat: -5.452781237999917,
         lng: 105.3293145790001
-    }]
+    }];
 
     const kdmnCoords = [{
         lat: -5.393178823,
@@ -53005,7 +53003,7 @@ function initMap() {
     }, {
         lat: -5.393178823,
         lng: 105.28896225199999
-    }]
+    }];
 
     const skbmCoords = [{
         lat: -5.396278305999948,
@@ -54902,7 +54900,7 @@ function initMap() {
         lng: 105.32314707100005
     }];
 
-    var enggal = new google.maps.Polygon({
+    const enggal = new google.maps.Polygon({
         paths: enggalCoords,
         strokeColor: 'black',
         strokeOpacity: 0.35,
@@ -54914,7 +54912,7 @@ function initMap() {
         index: "3.461893116"
     });
 
-    var kedaton = new google.maps.Polygon({
+    const kedaton = new google.maps.Polygon({
         paths: kedatonCoords,
         strokeColor: 'black',
         strokeOpacity: 0.35,
@@ -54926,7 +54924,7 @@ function initMap() {
         index: "3.461893116"
     });
 
-    var rajabasa = new google.maps.Polygon({
+    const rajabasa = new google.maps.Polygon({
         paths: rajabasaCoords,
         strokeColor: 'black',
         strokeOpacity: 0.35,
@@ -54938,7 +54936,7 @@ function initMap() {
         index: "3.461893116"
     });
 
-    var tjsenang = new google.maps.Polygon({
+    const tjsenang = new google.maps.Polygon({
         paths: tjsenangCoords,
         strokeColor: 'black',
         strokeOpacity: 0.35,
@@ -54950,7 +54948,7 @@ function initMap() {
         index: "3.461893116"
     });
 
-    var langkapura = new google.maps.Polygon({
+    const langkapura = new google.maps.Polygon({
         paths: langkapuraCoords,
         strokeColor: 'black',
         strokeOpacity: 0.35,
@@ -54962,7 +54960,7 @@ function initMap() {
         index: "3.461893116"
     });
 
-    var sukarame = new google.maps.Polygon({
+    const sukarame = new google.maps.Polygon({
         paths: sukarameCoords,
         strokeColor: 'black',
         strokeOpacity: 0.35,
@@ -54974,7 +54972,7 @@ function initMap() {
         index: "3.461893116"
     });
 
-    var tbb = new google.maps.Polygon({
+    const tbb = new google.maps.Polygon({
         paths: tbbCoords,
         strokeColor: 'black',
         strokeOpacity: 0.35,
@@ -54986,7 +54984,7 @@ function initMap() {
         index: "3.461893116"
     });
 
-    var tbs = new google.maps.Polygon({
+    const tbs = new google.maps.Polygon({
         paths: tbsCoords,
         strokeColor: 'black',
         strokeOpacity: 0.35,
@@ -54998,7 +54996,7 @@ function initMap() {
         index: "3.461893116"
     });
 
-    var tbt = new google.maps.Polygon({
+    const tbt = new google.maps.Polygon({
         paths: tbtCoords,
         strokeColor: 'black',
         strokeOpacity: 0.35,
@@ -55010,7 +55008,7 @@ function initMap() {
         index: "3.461893116"
     });
 
-    var tbu = new google.maps.Polygon({
+    const tbu = new google.maps.Polygon({
         paths: tbuCoords,
         strokeColor: 'black',
         strokeOpacity: 0.35,
@@ -55022,7 +55020,7 @@ function initMap() {
         index: "3.461893116"
     });
 
-    var tkb = new google.maps.Polygon({
+    const tkb = new google.maps.Polygon({
         paths: tkbCoords,
         strokeColor: 'black',
         strokeOpacity: 0.35,
@@ -55034,7 +55032,7 @@ function initMap() {
         index: "3.461893116"
     });
 
-    var tkp = new google.maps.Polygon({
+    const tkp = new google.maps.Polygon({
         paths: tkpCoords,
         strokeColor: 'black',
         strokeOpacity: 0.35,
@@ -55046,7 +55044,7 @@ function initMap() {
         index: "3.461893116"
     });
 
-    var tkt = new google.maps.Polygon({
+    const tkt = new google.maps.Polygon({
         paths: tktCoords,
         strokeColor: 'black',
         strokeOpacity: 0.35,
@@ -55058,7 +55056,7 @@ function initMap() {
         index: "3.461893116"
     });
 
-    var kemiling = new google.maps.Polygon({
+    const kemiling = new google.maps.Polygon({
         paths: kemilingCoords,
         strokeColor: 'black',
         strokeOpacity: 0.35,
@@ -55070,7 +55068,7 @@ function initMap() {
         index: "3.461893116"
     });
 
-    var labratu = new google.maps.Polygon({
+    const labratu = new google.maps.Polygon({
         paths: labratuCoords,
         strokeColor: 'black',
         strokeOpacity: 0.35,
@@ -55082,7 +55080,7 @@ function initMap() {
         index: "3.461893116"
     });
 
-    var wayhalim = new google.maps.Polygon({
+    const wayhalim = new google.maps.Polygon({
         paths: wayhalimCoords,
         strokeColor: 'black',
         strokeOpacity: 0.35,
@@ -55094,7 +55092,7 @@ function initMap() {
         index: "3.461893116"
     });
 
-    var bw = new google.maps.Polygon({
+    const bw = new google.maps.Polygon({
         paths: bwCoords,
         strokeColor: 'black',
         strokeOpacity: 0.35,
@@ -55106,7 +55104,7 @@ function initMap() {
         index: "3.461893116"
     });
 
-    var pjg = new google.maps.Polygon({
+    const pjg = new google.maps.Polygon({
         paths: pjgCoords,
         strokeColor: 'black',
         strokeOpacity: 0.35,
@@ -55118,7 +55116,7 @@ function initMap() {
         index: "3.461893116"
     });
 
-    var kdmn = new google.maps.Polygon({
+    const kdmn = new google.maps.Polygon({
         paths: kdmnCoords,
         strokeColor: 'black',
         strokeOpacity: 0.35,
@@ -55130,7 +55128,7 @@ function initMap() {
         index: "3.461893116"
     });
 
-    var skbm = new google.maps.Polygon({
+    const skbm = new google.maps.Polygon({
         paths: skbmCoords,
         strokeColor: 'black',
         strokeOpacity: 0.35,
