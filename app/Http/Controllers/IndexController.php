@@ -10,7 +10,8 @@ class IndexController extends Controller
     public function index()
     {
         $jenis_faskes = DB::table('datajenis')->get();
-        return view('index', ['jenis_faskes' => $jenis_faskes]);
+        $jam_buka = DB::table('jam_buka')->get();
+        return view('index', ['jenis_faskes' => $jenis_faskes, 'jam_buka' => $jam_buka]);
     }
 
     public function persebaran()
