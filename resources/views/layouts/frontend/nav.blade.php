@@ -2,7 +2,7 @@
 			<div class="container px-0">
 				<nav class="navbar navbar-expand-xl navbar-light hk-navbar hk-navbar-alt shadow-none">
 					<a class="navbar-toggle-btn nav-link-hover navbar-toggler" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarCollapseAlt" aria-controls="navbarCollapseAlt" aria-expanded="false" aria-label="Toggle navigation"><span class="feather-icon"><i data-feather="menu"></i></span></a>
-					<a class="navbar-brand" href="#">
+					<a class="navbar-brand" href="/">
 						<h4>SIG AKIA</h4>
 					</a>
 					
