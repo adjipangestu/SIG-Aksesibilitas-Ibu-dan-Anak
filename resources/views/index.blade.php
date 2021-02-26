@@ -1739,7 +1739,7 @@
 				lng: 105.26979638400005
 			}]
 
-			var kedatonCoords = [{
+			const kedatonCoords = [{
 				lat: -5.380680732999922,
 				lng: 105.27196454500003
 			}, {
@@ -7707,7 +7707,7 @@
 				lng: 105.26089468200009
 			}]
 
-			var tjsenangCoords = [{
+			const tjsenangCoords = [{
 				lat: -5.348063818321881,
 				lng: 105.2906994579684
 			}, {
