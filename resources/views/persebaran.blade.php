@@ -88,9 +88,6 @@
         var id_jenis_faskes =  document.getElementById('jenis_faskes').value;
         var id_jam_buka =  document.getElementById('jam_buka').value;
 
-        console.log(id_jenis_faskes)
-        console.log(id_jam_buka)
-
         $.ajax({
             type : "GET",
             url  : "{{ route('persebaran.list') }}",
@@ -112,8 +109,6 @@
                     var data = result[i];
                     var latnya = data.latitude;
                     var longnya = data.longitude;
-
-                    console.log(data.alamat)
             
                     var myLatlng = new google.maps.LatLng(latnya, longnya);
                     var marker = new google.maps.Marker({
