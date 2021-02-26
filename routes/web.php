@@ -20,6 +20,16 @@ Auth::routes();
 Route::group(['prefix' => 'admin', 'middleware' => ['auth','role:admin']], function(){
     Route::get('/home', 'Admin\HomeController@index')->name('admin.index');
 
+    //this route all data user
+    Route::get('/user', 'Admin\UsersController@index')->name('admin.user.index');
+    Route::get('/user/list', 'Admin\UsersController@listUser')->name('admin.user.list');
+    Route::get('/user/add', 'Admin\UsersController@add')->name('admin.user.add');
+    Route::post('/user/add/do', 'Admin\UsersController@addDo')->name('admin.user.add.do');
+    Route::get('/user/edit/{id}', 'Admin\UsersController@edit')->name('admin.user.edit');
+    Route::post('/user/edit/do/{id}', 'Admin\UsersController@editDo')->name('admin.user.edit.do');
+    Route::get('/user/reset-pw/{id}', 'Admin\UsersController@resetPw')->name('admin.user.reset_pw');
+    Route::get('/user/delete/{id}', 'Admin\UsersController@delete')->name('admin.user.delete');
+
     Route::group(['prefix' => 'kelola-data'], function(){
         //this route all jarak
         Route::get('/jarak', 'Admin\JarakController@index')->name('admin.jarak.index');

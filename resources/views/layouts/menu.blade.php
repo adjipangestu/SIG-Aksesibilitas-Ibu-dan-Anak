@@ -40,6 +40,12 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item {{ Request::segment(2) == 'user' ? 'active' : ''}}">
+                            <a class="nav-link" href="{{ route('admin.user.index') }}">
+                                <span class="feather-icon"><i data-feather="user"></i></span>
+                                <span class="nav-link-text">Manajemen User</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

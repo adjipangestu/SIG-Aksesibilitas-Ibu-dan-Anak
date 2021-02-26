@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-sm">
                     <div class="table-wrap">
-                        <table id="data_faskes" class="table table-hover w-100 display">
+                        <table id="kabupaten" class="table table-hover w-100 display">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -60,7 +60,7 @@
 
     <script>
         $(document).ready(function() {
-            $('#data_faskes').DataTable({
+            $('#kabupaten').DataTable({
                 dom: 'Bfrtip',
                 responsive: true,
                 language: { 
@@ -88,6 +88,16 @@
                 ]
             });
         } );
+    </script>
+    <script>
+        $('#kabupaten').on('click','.deleted', function () {
+            var result = confirm("Yakin ingin menghapus data?");
+            if (result) {
+                window.location.href = this.getAttribute('href');
+            }else{
+                event.preventDefault();
+            }
+        });
     </script>
     @if ($message = Session::get('success'))
     <script>

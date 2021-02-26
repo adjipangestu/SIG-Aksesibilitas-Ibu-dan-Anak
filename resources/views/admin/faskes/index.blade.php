@@ -107,6 +107,16 @@
             });
         } );
     </script>
+    <script>
+        $('#data_faskes').on('click','.deleted', function () {
+            var result = confirm("Yakin ingin menghapus data?");
+            if (result) {
+                window.location.href = this.getAttribute('href');
+            }else{
+                event.preventDefault();
+            }
+        });
+    </script>
     @if ($message = Session::get('success'))
     <script>
         $(document).ready(function() {

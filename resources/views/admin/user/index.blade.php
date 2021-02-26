@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Data Kecamatan')
+@section('title', 'Data User')
 
 @push('css')
     <!-- Data Table CSS -->
@@ -14,23 +14,23 @@
     <div class="container">
         <!-- Title -->
         <div class="hk-pg-header">
-            <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="database"></i></span></span>Data Kecamatan</h4>
+            <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="database"></i></span></span>Data User</h4>
         </div>
         <!-- /Title -->
 
         <section class="hk-sec-wrapper">
-            <h5 class="hk-sec-title"><a href="{{ route('admin.kecamatan.add') }}" class="btn btn-primary">Tambah Data</a></h5>
+            <h5 class="hk-sec-title"><a href="{{ route('admin.user.add') }}" class="btn btn-primary">Tambah Data</a></h5>
             <div class="row">
                 <div class="col-sm">
                     <div class="table-wrap">
-                        <table id="kecamatan" class="table table-hover w-100 display">
+                        <table id="users" class="table table-hover w-100 display">
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Kecamatan</th>
-                                    <th>Latitude</th>
-                                    <th>Longitude</th>
-                                    <th>Kabupaten</th>
+                                    <th>Nama</th>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -63,7 +63,7 @@
 
     <script>
         $(document).ready(function() {
-            $('#kecamatan').DataTable({
+            $('#users').DataTable({
                 dom: 'Bfrtip',
                 responsive: true,
                 language: { 
@@ -81,22 +81,30 @@
                     $('.dt-buttons > .btn').addClass('btn-outline-light btn-sm');
                 },
                 ajax:{
-                    url: "{{ route('admin.kecamatan.list') }}",
+                    url: "{{ route('admin.user.list') }}",
                     type: 'GET',
                 },
                 columns: [
                     { data: 'DT_RowIndex', name:'DT_RowIndex' },
-                    { data: 'nama_kecamatan', name:'nama_kecamatan' },
-                    { data: 'latitude', name: 'latitude' },
-                    { data: 'longitude', name: 'longitude' },
-                    { data: 'nama_kabupaten', name: 'nama_kabupaten' },
+                    { data: 'name', name:'name' },
+                    { data: 'username', name:'username' },
+                    { data: 'email', name:'email' },
+                    { data: 'role', name:'role' },
                     { data: 'action', name: 'action' },
                 ]
             });
         } );
     </script>
     <script>
-        $('#kecamatan').on('click','.deleted', function () {
+        $('#users').on('click','.reset-pw', function () {
+            var result = confirm("Yakin ingin reset password? Jadinya 123456");
+            if (result) {
+                window.location.href = this.getAttribute('href');
+            }else{
+                event.preventDefault();
+            }
+        });
+        $('#users').on('click','.deleted', function () {
             var result = confirm("Yakin ingin menghapus data?");
             if (result) {
                 window.location.href = this.getAttribute('href');
