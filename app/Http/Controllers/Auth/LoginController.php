@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Validator;
-Use Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Providers\RouteServiceProvider;
 
@@ -29,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -48,13 +48,13 @@ class LoginController extends Controller
             "username.required" => "Username harus diisi",
             "username.exists" => "Username tidak ditemukan",
             "password.required" => "Password is required",
-            "password.min" => "Password harus lebih dari 6 characters"
+            "password.min" => "Password harus lebih dari 4 characters"
         ];
 
         // validate the form data
         $validator = Validator::make($request->all(), [
                 'username' => 'required|exists:users,username',
-                'password' => 'required|min:6'
+                'password' => 'required|min:4'
             ], $messages);
 
         if ($validator->fails()) {
@@ -75,9 +75,9 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
-        if ($user->role_id === 1) {
+        if ($user->role_id == 1) {
             return redirect()->route('admin.index');
-        } else if ($user->role_id === 2) {
+        } else if ($user->role_id == 2) {
             return redirect()->route('index');
         }
     }
