@@ -40,8 +40,8 @@ License: You must have a valid license purchased only from themeforest to legall
 	
 	<!-- HK Wrapper -->
 	<div class="hk-wrapper hk-vertical-nav">
-        @include('layouts.top')
-        @include('layouts.menu')
+        @include('layouts.backend.top')
+        @include('layouts.backend.menu')
         <!-- Main Content -->
         <div class="hk-pg-wrapper">
             @yield('content')

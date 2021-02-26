@@ -84,9 +84,9 @@
 					<section class="hk-landing-sec pb-35">
 						<div class="container">
 							<h2 class="text-center">Selamat Datang di SIG Aksesibilitas Ibu dan Anak</h2>
-							<p class="text-center mt-4">SIG Aksesibilitas Ibu dan Anak merupakan sistem informasi berbasis geografis yang menampilkan persebaran dan indeks aksesibilitas fasilitas kesehatan ibu dan anak yang berada di wilayah kota Bandarlampung. Aksesibilitas merupakan</p>
+							<p class="text-center mt-4">SIG Aksesibilitas Ibu dan Anak merupakan sistem informasi berbasis geografis yang menampilkan persebaran dan indeks aksesibilitas fasilitas kesehatan ibu dan anak yang berada di wilayah kota Bandarlampung. Terdapat beberapa jenis fasiitas kesehatan diantaranya sebga berikut ini</p>
 							<div class="row mt-50">
-								<div class="col-lg-6">
+								<div class="col-lg-3 col-sm-6 mb-45">
 									<h5 class="mb-20">
 										<span class="d-flex align-items-center">
 											<span class="feather-icon text-pink mr-15"><i data-feather="underline"></i></span>
@@ -94,15 +94,6 @@
 										</span>
 									</h5>
 									<p>Easy styling with spacing, sizing, backgrounds, shadows and many more utilities.</p>
-								</div>
-								<div class="col-lg-6">
-									<h5 class="mb-20">
-										<span class="d-flex align-items-center">
-											<span class="feather-icon text-teal mr-15"><i data-feather="type"></i></span>
-											Typography
-										</span>	
-									</h5>
-									<p>The Typography, includes global settings, headings, body text, lists, responsive typography and more.</p>
 								</div>
 							</div>
 						</div>

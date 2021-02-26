@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.backend.main')
 @section('title', 'Data Jenis Faskes')
 
 @push('css')

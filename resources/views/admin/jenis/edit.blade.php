@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.backend.main')
 @section('title', 'Edit Jenis Fasilitas Kesehatan')
 
 
