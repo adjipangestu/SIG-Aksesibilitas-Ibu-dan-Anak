@@ -32,25 +32,26 @@
 						<h2 class="text-center">Peta Aksesibilitas Ibu dan Anak</h2>
 							<div class="row mt-50">
                                 <div class="col-sm">
-                                    <form>
+                                    <form action="{{ route('index') }}" method="get">
                                         <div class="row">
-                                            <div class="col-md-6 form-group">
-                                                <label for="asal"><strong>Jenis Fasilitas Kesehatan</strong></label>
+                                            <div class="col-md-4 form-group">
                                                 <select class="form-control" name="jenis_faskes" id="jenis_faskes">
                                                     <option value="">Semua Fasilitas Kesehatan</option>
                                                     @foreach($jenis_faskes as $item)
-                                                        <option value="{{ $item->id_jenis_faskes }}">{{ $item->jenis_faskes }}</option>
+                                                        <option value="{{ $item->id_jenis_faskes }}" @if( Request::input('jenis_faskes') == $item->id_jenis_faskes) selected @endif>{{ $item->jenis_faskes }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
-                                            <div class="col-md-6 form-group">
-                                                <label for="tujuan"><strong>Jam Buka</strong></label>
+                                            <div class="col-md-4 form-group">
                                                 <select class="form-control" name="jam_buka" id="jam_buka">
                                                     <option value="">Semua Jam Buka</option>
                                                     @foreach($jam_buka as $item)
-                                                        <option value="{{ $item->id_jam_buka }}">{{ $item->jam_buka }}</option>
+                                                        <option value="{{ $item->id_jam_buka }}" @if( Request::input('jam_buka') == $item->id_jam_buka) selected @endif>{{ $item->jam_buka }}</option>
                                                     @endforeach
                                                 </select>
+                                            </div>
+											<div class="col-md-4 form-group">
+                                                <button class="btn btn-primary" type="submit">Cari</button>
                                             </div>
                                         </div>
                                     </form>
