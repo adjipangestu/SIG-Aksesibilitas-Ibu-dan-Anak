@@ -94,10 +94,15 @@
 @push('js')
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPNpyLAPlS77x4m8e3NdunZAx2VcGme6w&callback=initMap&libraries=&v=weekly"
-		async>
+		async defer>
 	</script>
 	<!-- <script src="assets/data.js"></script> -->
 	<script>
+		const enggal_color = "{{ $result['Sukabumi']['color'] }}";
+		const enggal_nameKecamatan = "{{ $result['Sukabumi']['nama_kecamatan'] }}";
+		const enggal_jarak = "{{ $result['Sukabumi']['min'] }}";
+		const enggal_nilai = "{{ $result['Sukabumi']['nilai_akses'] }}"; 
+
 		function initMap() {
 			var map = new google.maps.Map(document.getElementById('map'), {
 				zoom: 11.5,
@@ -55000,16 +55005,17 @@
 				lng: 105.32314707100005
 			}];
 
+
 			const enggal = new google.maps.Polygon({
 				paths: enggalCoords,
 				strokeColor: 'black',
 				strokeOpacity: 0.35,
 				strokeWeight: 2,
-				fillColor: "{{ $result['Enggal']['color'] }}",
+				fillColor: enggal_color,
 				fillOpacity: 1,
-				nameKecamatan: "{{ $result['Enggal']['nama_kecamatan'] }}",
-				jarak: "{{ $result['Enggal']['min'] }}",
-				index: "{{ $result['Enggal']['nilai_akses'] }}",
+				nameKecamatan: enggal_nameKecamatan,
+				jarak: enggal_jarak,
+				index: enggal_nilai,
 			});
 
 			const kedaton = new google.maps.Polygon({
@@ -55017,11 +55023,11 @@
 				strokeColor: 'black',
 				strokeOpacity: 0.35,
 				strokeWeight: 2,
-				fillColor: "{{ $result['Kedaton']['color'] }}",
+				fillColor: enggal_color,
 				fillOpacity: 1,
-				nameKecamatan: "{{ $result['Kedaton']['nama_kecamatan'] }}",
-				jarak: "{{ $result['Kedaton']['min'] }}",
-				index: "{{ $result['Kedaton']['nilai_akses'] }}",
+				nameKecamatan: enggal_nameKecamatan,
+				jarak: enggal_jarak,
+				index: enggal_nilai,
 			});
 
 			const rajabasa = new google.maps.Polygon({
@@ -55029,11 +55035,11 @@
 				strokeColor: 'black',
 				strokeOpacity: 0.35,
 				strokeWeight: 2,
-				fillColor: "{{ $result['Rajabasa']['color'] }}",
+				fillColor: enggal_color,
 				fillOpacity: 1,
-				nameKecamatan: "{{ $result['Rajabasa']['nama_kecamatan'] }}",
-				jarak: "{{ $result['Rajabasa']['min'] }}",
-				index: "{{ $result['Rajabasa']['nilai_akses'] }}",
+				nameKecamatan: enggal_nameKecamatan,
+				jarak: enggal_jarak,
+				index: enggal_nilai,
 			});
 
 			const tjsenang = new google.maps.Polygon({
@@ -55041,11 +55047,11 @@
 				strokeColor: 'black',
 				strokeOpacity: 0.35,
 				strokeWeight: 2,
-				fillColor: "{{ $result['Tanjung_Senang']['color'] }}",
+				fillColor: enggal_color,
 				fillOpacity: 1,
-				nameKecamatan: "{{ $result['Tanjung_Senang']['nama_kecamatan'] }}",
-				jarak: "{{ $result['Tanjung_Senang']['min'] }}",
-				index: "{{ $result['Tanjung_Senang']['nilai_akses'] }}",
+				nameKecamatan: enggal_nameKecamatan,
+				jarak: enggal_jarak,
+				index: enggal_nilai,
 			});
 
 			const langkapura = new google.maps.Polygon({
@@ -55053,11 +55059,11 @@
 				strokeColor: 'black',
 				strokeOpacity: 0.35,
 				strokeWeight: 2,
-				fillColor: "{{ $result['Langkapura']['color'] }}",
+				fillColor: enggal_color,
 				fillOpacity: 1,
-				nameKecamatan: "{{ $result['Langkapura']['nama_kecamatan'] }}",
-				jarak: "{{ $result['Langkapura']['min'] }}",
-				index: "{{ $result['Langkapura']['nilai_akses'] }}",
+				nameKecamatan: enggal_nameKecamatan,
+				jarak: enggal_jarak,
+				index: enggal_nilai,
 			});
 
 			const sukarame = new google.maps.Polygon({
@@ -55065,11 +55071,11 @@
 				strokeColor: 'black',
 				strokeOpacity: 0.35,
 				strokeWeight: 2,
-				fillColor: "{{ $result['Sukarame']['color'] }}",
+				fillColor: enggal_color,
 				fillOpacity: 1,
-				nameKecamatan: "{{ $result['Sukarame']['nama_kecamatan'] }}",
-				jarak: "{{ $result['Sukarame']['min'] }}",
-				index: "{{ $result['Sukarame']['nilai_akses'] }}",
+				nameKecamatan: enggal_nameKecamatan,
+				jarak: enggal_jarak,
+				index: enggal_nilai,
 			});
 
 			const tbb = new google.maps.Polygon({
@@ -55077,11 +55083,11 @@
 				strokeColor: 'black',
 				strokeOpacity: 0.35,
 				strokeWeight: 2,
-				fillColor: "{{ $result['Teluk_Betung_Barat']['color'] }}",
+				fillColor: enggal_color,
 				fillOpacity: 1,
-				nameKecamatan: "{{ $result['Teluk_Betung_Barat']['nama_kecamatan'] }}",
-				jarak: "{{ $result['Teluk_Betung_Barat']['min'] }}",
-				index: "{{ $result['Teluk_Betung_Barat']['nilai_akses'] }}",
+				nameKecamatan: enggal_nameKecamatan,
+				jarak: enggal_jarak,
+				index: enggal_nilai,
 			});
 
 			const tbs = new google.maps.Polygon({
@@ -55089,11 +55095,11 @@
 				strokeColor: 'black',
 				strokeOpacity: 0.35,
 				strokeWeight: 2,
-				fillColor: "{{ $result['Teluk_Betung_Selatan']['color'] }}",
+				fillColor: enggal_color,
 				fillOpacity: 1,
-				nameKecamatan: "{{ $result['Teluk_Betung_Selatan']['nama_kecamatan'] }}",
-				jarak: "{{ $result['Teluk_Betung_Selatan']['min'] }}",
-				index: "{{ $result['Teluk_Betung_Selatan']['nilai_akses'] }}",
+				nameKecamatan: enggal_nameKecamatan,
+				jarak: enggal_jarak,
+				index: enggal_nilai,
 			});
 
 			const tbt = new google.maps.Polygon({
@@ -55101,11 +55107,11 @@
 				strokeColor: 'black',
 				strokeOpacity: 0.35,
 				strokeWeight: 2,
-				fillColor: "{{ $result['Teluk_Betung_Timur']['color'] }}",
+				fillColor: enggal_color,
 				fillOpacity: 1,
-				nameKecamatan: "{{ $result['Teluk_Betung_Timur']['nama_kecamatan'] }}",
-				jarak: "{{ $result['Teluk_Betung_Timur']['min'] }}",
-				index: "{{ $result['Teluk_Betung_Timur']['nilai_akses'] }}",
+				nameKecamatan: enggal_nameKecamatan,
+				jarak: enggal_jarak,
+				index: enggal_nilai,
 			});
 
 			const tbu = new google.maps.Polygon({
@@ -55113,11 +55119,11 @@
 				strokeColor: 'black',
 				strokeOpacity: 0.35,
 				strokeWeight: 2,
-				fillColor: "{{ $result['Teluk_Betung_Utara']['color'] }}",
+				fillColor: enggal_color,
 				fillOpacity: 1,
-				nameKecamatan: "{{ $result['Teluk_Betung_Utara']['nama_kecamatan'] }}",
-				jarak: "{{ $result['Teluk_Betung_Utara']['min'] }}",
-				index: "{{ $result['Teluk_Betung_Utara']['nilai_akses'] }}",
+				nameKecamatan: enggal_nameKecamatan,
+				jarak: enggal_jarak,
+				index: enggal_nilai,
 			});
 
 			const tkb = new google.maps.Polygon({
@@ -55125,11 +55131,11 @@
 				strokeColor: 'black',
 				strokeOpacity: 0.35,
 				strokeWeight: 2,
-				fillColor: "{{ $result['Tanjung_Karang_Barat']['color'] }}",
+				fillColor: enggal_color,
 				fillOpacity: 1,
-				nameKecamatan: "{{ $result['Tanjung_Karang_Barat']['nama_kecamatan'] }}",
-				jarak: "{{ $result['Tanjung_Karang_Barat']['min'] }}",
-				index: "{{ $result['Tanjung_Karang_Barat']['nilai_akses'] }}",
+				nameKecamatan: enggal_nameKecamatan,
+				jarak: enggal_jarak,
+				index: enggal_nilai,
 			});
 
 			const tkp = new google.maps.Polygon({
@@ -55137,11 +55143,11 @@
 				strokeColor: 'black',
 				strokeOpacity: 0.35,
 				strokeWeight: 2,
-				fillColor: "{{ $result['Tanjung_Karang_Pusat']['color'] }}",
+				fillColor: enggal_color,
 				fillOpacity: 1,
-				nameKecamatan: "{{ $result['Tanjung_Karang_Pusat']['nama_kecamatan'] }}",
-				jarak: "{{ $result['Tanjung_Karang_Pusat']['min'] }}",
-				index: "{{ $result['Tanjung_Karang_Pusat']['nilai_akses'] }}",
+				nameKecamatan: enggal_nameKecamatan,
+				jarak: enggal_jarak,
+				index: enggal_nilai,
 			});
 
 			const tkt = new google.maps.Polygon({
@@ -55149,11 +55155,11 @@
 				strokeColor: 'black',
 				strokeOpacity: 0.35,
 				strokeWeight: 2,
-				fillColor: "{{ $result['Tanjung_Karang_Timur']['color'] }}",
+				fillColor: enggal_color,
 				fillOpacity: 1,
-				nameKecamatan: "{{ $result['Tanjung_Karang_Timur']['nama_kecamatan'] }}",
-				jarak: "{{ $result['Tanjung_Karang_Timur']['min'] }}",
-				index: "{{ $result['Tanjung_Karang_Timur']['nilai_akses'] }}",
+				nameKecamatan: enggal_nameKecamatan,
+				jarak: enggal_jarak,
+				index: enggal_nilai,
 			});
 
 			const kemiling = new google.maps.Polygon({
@@ -55162,10 +55168,11 @@
 				strokeOpacity: 0.35,
 				strokeWeight: 2,
 				fillColor: "{{ $result['Kemiling']['color'] }}",
+				fillColor: enggal_color,
 				fillOpacity: 1,
-				nameKecamatan: "{{ $result['Kemiling']['nama_kecamatan'] }}",
-				jarak: "{{ $result['Kemiling']['min'] }}",
-				index: "{{ $result['Kemiling']['nilai_akses'] }}",
+				nameKecamatan: enggal_nameKecamatan,
+				jarak: enggal_jarak,
+				index: enggal_nilai,
 			});
 
 			const labratu = new google.maps.Polygon({
@@ -55173,11 +55180,11 @@
 				strokeColor: 'black',
 				strokeOpacity: 0.35,
 				strokeWeight: 2,
-				fillColor: "{{ $result['Labuhan_Ratu']['color'] }}",
+				fillColor: enggal_color,
 				fillOpacity: 1,
-				nameKecamatan: "{{ $result['Labuhan_Ratu']['nama_kecamatan'] }}",
-				jarak: "{{ $result['Labuhan_Ratu']['min'] }}",
-				index: "{{ $result['Labuhan_Ratu']['nilai_akses'] }}",
+				nameKecamatan: enggal_nameKecamatan,
+				jarak: enggal_jarak,
+				index: enggal_nilai,
 			});
 
 			const wayhalim = new google.maps.Polygon({
@@ -55185,11 +55192,11 @@
 				strokeColor: 'black',
 				strokeOpacity: 0.35,
 				strokeWeight: 2,
-				fillColor: "{{ $result['Way_Halim']['color'] }}",
+				fillColor: enggal_color,
 				fillOpacity: 1,
-				nameKecamatan: "{{ $result['Way_Halim']['nama_kecamatan'] }}",
-				jarak: "{{ $result['Way_Halim']['min'] }}",
-				index: "{{ $result['Way_Halim']['nilai_akses'] }}",
+				nameKecamatan: enggal_nameKecamatan,
+				jarak: enggal_jarak,
+				index: enggal_nilai,
 			});
 
 			const bw = new google.maps.Polygon({
@@ -55197,11 +55204,11 @@
 				strokeColor: 'black',
 				strokeOpacity: 0.35,
 				strokeWeight: 2,
-				fillColor: "{{ $result['Bumi_Waras']['color'] }}",
+				fillColor: enggal_color,
 				fillOpacity: 1,
-				nameKecamatan: "{{ $result['Bumi_Waras']['nama_kecamatan'] }}",
-				jarak: "{{ $result['Bumi_Waras']['min'] }}",
-				index: "{{ $result['Bumi_Waras']['nilai_akses'] }}",
+				nameKecamatan: enggal_nameKecamatan,
+				jarak: enggal_jarak,
+				index: enggal_nilai,
 			});
 
 			const pjg = new google.maps.Polygon({
@@ -55209,11 +55216,11 @@
 				strokeColor: 'black',
 				strokeOpacity: 0.35,
 				strokeWeight: 2,
-				fillColor: "{{ $result['Panjang']['color'] }}",
+				fillColor: enggal_color,
 				fillOpacity: 1,
-				nameKecamatan: "{{ $result['Panjang']['nama_kecamatan'] }}",
-				jarak: "{{ $result['Panjang']['min'] }}",
-				index: "{{ $result['Panjang']['nilai_akses'] }}",
+				nameKecamatan: enggal_nameKecamatan,
+				jarak: enggal_jarak,
+				index: enggal_nilai,
 			});
 
 			const kdmn = new google.maps.Polygon({
@@ -55221,11 +55228,11 @@
 				strokeColor: 'black',
 				strokeOpacity: 0.35,
 				strokeWeight: 2,
-				fillColor: "{{ $result['Kedamaian']['color'] }}",
+				fillColor: enggal_color,
 				fillOpacity: 1,
-				nameKecamatan: "{{ $result['Kedamaian']['nama_kecamatan'] }}",
-				jarak: "{{ $result['Kedamaian']['min'] }}",
-				index: "{{ $result['Kedamaian']['nilai_akses'] }}",
+				nameKecamatan: enggal_nameKecamatan,
+				jarak: enggal_jarak,
+				index: enggal_nilai,
 			});
 
 			const skbm = new google.maps.Polygon({
@@ -55233,11 +55240,11 @@
 				strokeColor: 'black',
 				strokeOpacity: 0.35,
 				strokeWeight: 2,
-				fillColor: "{{ $result['Sukabumi']['color'] }}",
+				fillColor: enggal_color,
 				fillOpacity: 1,
-				nameKecamatan: "{{ $result['Sukabumi']['nama_kecamatan'] }}",
-				jarak: "{{ $result['Sukabumi']['min'] }}",
-				index: "{{ $result['Sukabumi']['nilai_akses'] }}",
+				nameKecamatan: enggal_nameKecamatan,
+				jarak: enggal_jarak,
+				index: enggal_nilai,
 			});
 
 			skbm.setMap(map);
