@@ -7,20 +7,19 @@ use DB;
 
 class IndexController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         $jenis_faskes = DB::table('datajenis')->get();
         $jam_buka = DB::table('jam_buka')->get();
 
+        return view('index', ['jenis_faskes' => $jenis_faskes, 'jam_buka' => $jam_buka]);
+    }
+
+    public function nilai_akses(Request $request)
+    {
         $id_jenis_faskes = !empty($request->jenis_faskes) ? ($request->jenis_faskes) : ('');
         $id_jam_buka = !empty($request->jam_buka) ? ($request->jam_buka) : ('');
 
-        $data = $this->nilai_index($id_jenis_faskes, $id_jam_buka);
-        return view('index', ['jenis_faskes' => $jenis_faskes, 'jam_buka' => $jam_buka, 'result' => $data]);
-    }
-
-    public function nilai_index($id_jenis_faskes, $id_jam_buka)
-    {
         $kecamatan = DB::table('kecamatan')->get();
         $arr = [];
 
@@ -35,6 +34,7 @@ class IndexController extends Controller
             $jarak_min = !empty($this->jarakTerdekat($value->id_kecamatan, $id_jenis_faskes, $id_jam_buka)) ? $this->jarakTerdekat($value->id_kecamatan, $id_jenis_faskes, $id_jam_buka) : 0;
             $nilai_index_akses = @($jarak_min / $avg);
             $arr[] = [
+                'id' => $value->id_kecamatan,
                 'nama_kecamatan' => $value->nama_kecamatan,
                 'min' => $jarak_min,
                 'avg' => $avg,
@@ -58,17 +58,105 @@ class IndexController extends Controller
         $result = [];
 
         foreach ($arr as $key => $value) {
-            $result[str_replace(' ', '_', $value['nama_kecamatan'])] = [
+            $result[$value['id']] = [
+                'id' => $value['id'],
                 'nama_kecamatan' => $value['nama_kecamatan'],
                 'min' => $value['min'],
                 'avg' => $value['avg'],
                 'total_min' => $value['total_jarak_min'],
                 'nilai_akses' => $value['nilai_index_akses'],
-                'color' => $this->kelas($data_rentang, $value['nilai_index_akses'])
+                'color' => $this->kelas($data_rentang, $value['nilai_index_akses']),
             ];
         }
 
-        return $result;
+        return response()->json($result, 200);
+    }
+
+    public function json(Request $request)
+    {
+        
+        $id_jenis_faskes = !empty($request->jenis_faskes) ? ($request->jenis_faskes) : ('');
+        $id_jam_buka = !empty($request->jam_buka) ? ($request->jam_buka) : ('');
+
+        $kecamatan = DB::table('kecamatan')->get();
+        $arr = [];
+
+        $total_min = 0;
+        foreach ($kecamatan as $key => $value) {
+            $total_min += $this->jarakTerdekat($value->id_kecamatan, $id_jenis_faskes, $id_jam_buka);
+        }
+
+        $avg = $total_min / count($kecamatan);
+
+        foreach ($kecamatan as $key => $value) {
+            $jarak_min = !empty($this->jarakTerdekat($value->id_kecamatan, $id_jenis_faskes, $id_jam_buka)) ? $this->jarakTerdekat($value->id_kecamatan, $id_jenis_faskes, $id_jam_buka) : 0;
+            $nilai_index_akses = @($jarak_min / $avg);
+            $arr[] = [
+                'id' => $value->id_kecamatan,
+                'nama_kecamatan' => $value->nama_kecamatan,
+                'min' => $jarak_min,
+                'avg' => $avg,
+                'total_jarak_min' => $total_min,
+                'nilai_index_akses' => !is_nan($nilai_index_akses) ? $nilai_index_akses : 0,
+                'coordinates' => json_decode($value->coordinates)
+            ];
+        }
+
+        $numbers = array_column($arr, 'nilai_index_akses');
+
+        $min = min($numbers);
+        $max = max($numbers);
+        $rentang = $max - $min / 5;
+
+        $data_rentang = [
+            'min' => $min,
+            'max' => $max,
+            'rentang' => $rentang
+        ];
+
+        $result = [];
+
+        foreach ($arr as $key => $value) {
+            $result[] = [
+                'id' => $value['id'],
+                'nama_kecamatan' => $value['nama_kecamatan'],
+                'min' => $value['min'],
+                'avg' => $value['avg'],
+                'total_min' => $value['total_jarak_min'],
+                'nilai_akses' => $value['nilai_index_akses'],
+                'color' => $this->kelas($data_rentang, $value['nilai_index_akses']),
+                'coordinates' => $value['coordinates'],
+            ];
+        }
+        
+        $features = [];
+
+        foreach ($result as $key => $value) {
+            $features[] = [
+                'type' => 'Feature',
+                'properties' => [
+                    'id' => $value['id'],
+                    'nama_kecamatan' => $value['nama_kecamatan'],
+                    'min' => $value['min'],
+                    'avg' => $value['avg'],
+                    'total_min' => $value['total_min'],
+                    'nilai_akses' => $value['nilai_akses'],
+                    'color' => $value['color'],
+                ],
+                'geometry' => [
+                    'type' => 'Polygon',
+                    'coordinates' => array($value['coordinates'])
+                ]
+            ];
+        }
+        $json = [
+            'type' => "FeatureCollection",
+            'features' => $features
+        ];
+
+        
+
+        return $json;
     }
 
     public function kelas($data, $nilai)
@@ -158,18 +246,6 @@ class IndexController extends Controller
         if ($request->ajax() || $request->wantsJson()) {
             return new JsonResponse(['message' => $e->getMessage()], 422);
         }
-
-//19 110
         
-    }
-
-    public function json()
-    {
-
-        $jsonString = file_get_contents(base_path('public/peta.geojson'));
-        $data = json_decode($jsonString, true);
-
-        return $data;
-        # code...
     }
 }
