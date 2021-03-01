@@ -132,7 +132,7 @@
 				if (data_map === null) {
 					$("#box-keterangan-kecamatan").text("Kecamatan " + event.feature.getProperty('nama_kecamatan'));
 				} else {
-					$("#box-keterangan-kecamatan").text("Kecamatan " + event.feature.getProperty('nama_kecamatan') + ", Jarak Min : " + data_map.total_min + ", Rata-rata : " + data_map.avg + ", Nilai Index : " + data_map.nilai_akses + ", Jarak terdekat : " + data_map.min);
+					$("#box-keterangan-kecamatan").text("Kecamatan " + event.feature.getProperty('nama_kecamatan') + ", Jumlah Jarak Terdekat : " + data_map.total_min + ", Rata-rata : " + data_map.avg + ", Nilai Index : " + data_map.nilai_akses + ", Jarak terdekat : " + data_map.min);
 				}
 			});
 			
