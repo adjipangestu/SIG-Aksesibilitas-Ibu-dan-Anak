@@ -55,11 +55,8 @@
 									</div>
                                 </div>
                             </div>
-							<div class="row mt-50">
-                                <div class="col-sm">
-									<div class="col-lg-12" id="box-keterangan-kecamatan">
-									</div>
-								</div>
+							<div class="row mt-3">
+								<h4 id="box-keterangan-kecamatan"></h4>
 							</div>
 						</div>
 					</section>
@@ -106,7 +103,7 @@
 
 		function initMap(data) {
 			map = new google.maps.Map(document.getElementById("map"), {
-				zoom: 11,
+				zoom: 11.5,
 				center: { lat:-5.4286681, lng:105.2006974 },
 			});
 
