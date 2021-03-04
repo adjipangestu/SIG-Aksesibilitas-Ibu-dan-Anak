@@ -47,7 +47,7 @@ class IndexController extends Controller
 
         $min = min($numbers);
         $max = max($numbers);
-        $rentang = $max - $min / 5;
+        $rentang = ($max - $min) / 4;
 
         $data_rentang = [
             'min' => $min,
@@ -106,13 +106,29 @@ class IndexController extends Controller
 
         $min = min($numbers);
         $max = max($numbers);
-        $rentang = $max - $min / 5;
+        $rentang = ($max - $min) / 4;
 
         $data_rentang = [
             'min' => $min,
             'max' => $max,
             'rentang' => $rentang
         ];
+
+        $kelas_satu = $data_rentang['max'];
+        $kelas_dua = $kelas_satu - $data_rentang['rentang'];
+        $kelas_tiga = $kelas_dua - $data_rentang['rentang'];
+        $kelas_empat = $kelas_tiga - $data_rentang['rentang'];
+        $kelas_lima = $data_rentang['min'];
+
+        $kelas = [
+            '1' => $kelas_satu,
+            '2' => $kelas_dua,
+            '3' => $kelas_tiga,
+            '4' => $kelas_empat,
+            '5' => $kelas_lima 
+        ];
+
+        // return $kelas;
 
         $result = [];
 
@@ -159,25 +175,27 @@ class IndexController extends Controller
         return $json;
     }
 
-    public function kelas($data, $nilai)
+    public function kelas($data_rentang, $nilai)
     {
-        $kelas_satu = $data['max'];
-        $kelas_dua = $data['max'] - $data['rentang'];
-        $kelas_tiga = $kelas_dua - $data['rentang'];
-        $kelas_empat = $kelas_tiga - $data['rentang'];
-        $kelas_lima = $data['min'];
+        $kelas_satu = $data_rentang['max'];
+        $kelas_dua = $kelas_satu - $data_rentang['rentang'];
+        $kelas_tiga = $kelas_dua - $data_rentang['rentang'];
+        $kelas_empat = $kelas_tiga - $data_rentang['rentang'];
+        $kelas_lima = $data_rentang['min'];
 
-        if($nilai >= $kelas_satu){
-            return '#0062ff';
-        } else if($nilai <= $kelas_satu && $nilai >= $kelas_dua){
-            return '#4d91ff';
-        } else if($nilai <= $kelas_dua && $nilai >= $kelas_tiga){
-            return '#78abff';
-        } else if($nilai <= $kelas_tiga && $nilai >= $kelas_empat){
-            return '#a6c7ff';
-        } else if($nilai <= $kelas_empat && $nilai < $kelas_lima) {
-            return '#c7dcff';
+        
+        $color = '#fff';
+        if($nilai >= $kelas_lima && $nilai <= $kelas_empat){
+            $color = '#bbd4fc';
+        } else if($nilai > $kelas_empat && $nilai <= $kelas_tiga){
+            $color = '#70a7ff';
+        } else if($nilai > $kelas_tiga && $nilai <= $kelas_dua){
+            $color = '#3773d4';
+        } else if($nilai > $kelas_dua && $nilai <= $kelas_satu){
+            $color =  '#0343ab';
         }
+
+        return $color;
     }
 
     public function rentang($data)
@@ -190,7 +208,7 @@ class IndexController extends Controller
         $result = [
             'min' => $min,
             'max' => $max,
-            'rentang' => $max - $min / 5
+            'rentang' => ($max - $min) / 5
         ];
 
         return $result;
