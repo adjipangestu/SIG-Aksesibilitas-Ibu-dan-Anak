@@ -47,7 +47,7 @@ class IndexController extends Controller
 
         $min = min($numbers);
         $max = max($numbers);
-        $rentang = $max - $min / 5;
+        $rentang = ($max - $min) / 4;
 
         $data_rentang = [
             'min' => $min,
@@ -106,7 +106,7 @@ class IndexController extends Controller
 
         $min = min($numbers);
         $max = max($numbers);
-        $rentang = $max - $min / 5;
+        $rentang = ($max - $min) / 4;
 
         $data_rentang = [
             'min' => $min,
@@ -162,21 +162,20 @@ class IndexController extends Controller
     public function kelas($data, $nilai)
     {
         $kelas_satu = $data['max'];
-        $kelas_dua = $data['max'] - $data['rentang'];
+        $kelas_dua = $kelas_satu- $data['rentang'];
         $kelas_tiga = $kelas_dua - $data['rentang'];
         $kelas_empat = $kelas_tiga - $data['rentang'];
         $kelas_lima = $data['min'];
 
-        if($nilai >= $kelas_satu){
-            return '#0062ff';
-        } else if($nilai <= $kelas_satu && $nilai >= $kelas_dua){
-            return '#4d91ff';
-        } else if($nilai <= $kelas_dua && $nilai >= $kelas_tiga){
-            return '#78abff';
-        } else if($nilai <= $kelas_tiga && $nilai >= $kelas_empat){
-            return '#a6c7ff';
-        } else if($nilai <= $kelas_empat && $nilai < $kelas_lima) {
-            return '#c7dcff';
+
+        if($nilai >=$kelas_lima && $nilai <=$kelas_empat){
+            return '#FBE8E7' ; //0.074587107-0.856229546 (terang)
+        } else if($nilai >$kelas_empat && $nilai <=$kelas_tiga){
+            return '#FFA690'; //0.856229546-1.637871984
+        } else if($nilai >$kelas_tiga && $nilai <=$kelas_dua){
+            return '#FF6542'; //1.637871984- 2.419514423
+        } else if($nilai >$kelas_dua && $nilai <=$kelas_satu) {
+            return '#BF130A'; //2.419514423 - 3.201156861 (gelap)
         }
     }
 
@@ -190,7 +189,7 @@ class IndexController extends Controller
         $result = [
             'min' => $min,
             'max' => $max,
-            'rentang' => $max - $min / 5
+            'rentang' => ($max - $min) / 4
         ];
 
         return $result;

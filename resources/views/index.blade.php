@@ -11,7 +11,7 @@
 					<section class="hk-landing-sec pb-35">
 						<div class="container">
 							<h2 class="text-center">Selamat Datang di SIG Aksesibilitas Ibu dan Anak</h2>
-							<p class="text-center mt-4">SIG Aksesibilitas Ibu dan Anak merupakan sistem informasi berbasis geografis yang menampilkan persebaran dan indeks aksesibilitas fasilitas kesehatan ibu dan anak yang berada di wilayah kota Bandarlampung. Terdapat beberapa jenis fasilitas kesehatan diantaranya sebga berikut ini</p>
+							<p class="text-center mt-4">SIG Aksesibilitas Ibu dan Anak merupakan sistem informasi berbasis geografis yang menampilkan persebaran dan indeks aksesibilitas fasilitas kesehatan ibu dan anak yang berada di wilayah kota Bandarlampung. Terdapat beberapa jenis fasilitas kesehatan diantaranya sebagai berikut ini</p>
 							<div class="row mt-50">
 								@foreach($jenis_faskes as $item)
 								<div class="col-lg-6 col-sm-6 mb-45">
@@ -52,14 +52,23 @@
 										<div class="col-md-4 form-group">
 											<button id="cari" class="btn btn-primary">Cari</button>
 										</div>
+										<div class="col-md-3">
+											<h6 style="background-color: #FBE8E7">Sangat Tinggi</h6>
+										</div>
+										<div class="col-md-3">
+											<h6 style="background-color: #FFA690">Tinggi</h6>
+										</div>
+										<div class="col-md-3">
+											<h6 style="background-color: #FF6542">Sedang</h6>
+										</div>
+										<div class="col-md-3">
+											<h6 style="background-color: #BF130A">Rendah</h6>
+										</div>
 									</div>
                                 </div>
                             </div>
-							<div class="row mt-50">
-                                <div class="col-sm">
-									<div class="col-lg-12" id="box-keterangan-kecamatan">
-									</div>
-								</div>
+							<div class="row mt-3">
+								<h4 id="box-keterangan-kecamatan"></h4>
 							</div>
 						</div>
 					</section>
@@ -103,36 +112,32 @@
 	<!-- <script src="assets/data.js"></script> -->
 	<script>
 		let map;
-
 		function initMap(data) {
 			map = new google.maps.Map(document.getElementById("map"), {
-				zoom: 11,
+				zoom: 11.5,
 				center: { lat:-5.4286681, lng:105.2006974 },
 			});
-
 			map.data.setStyle(function(feature) {
-				var opacity = 0.8;
+				var opacity = 1;
 				if (data[feature.getProperty('id')] === null) {
-					var color = "#ffffff";
+					var color = "#000000";
 				} else {
 					var color = data[feature.getProperty('id')].color;
 				}
-
 				return /** @type {google.maps.Data.StyleOptions} */ ({
 					fillColor: color,
 					fillOpacity: opacity,
-					strokeColor: color,
+					// strokeColor: color,
 					strokeOpacity: opacity,
-					strokeWeight: 3
+					strokeWeight: 1
 				});
 			});
-
 			map.data.addListener('mouseover', function(event) {
 				var data_map = data[event.feature.getProperty('id')];
 				if (data_map === null) {
 					$("#box-keterangan-kecamatan").text("Kecamatan " + event.feature.getProperty('nama_kecamatan'));
 				} else {
-					$("#box-keterangan-kecamatan").text("Kecamatan " + event.feature.getProperty('nama_kecamatan') + ", Jarak Min : " + data_map.total_min + ", Rata-rata : " + data_map.avg + ", Nilai Index : " + data_map.nilai_akses + ", Jarak terdekat : " + data_map.min);
+					$("#box-keterangan-kecamatan").text("Kecamatan " + event.feature.getProperty('nama_kecamatan') + ", Jumlah Jarak Terdekat : " + data_map.total_min + ", Rata-rata : " + data_map.avg + ", Nilai Index : " + data_map.nilai_akses + ", Jarak terdekat : " + data_map.min);
 				}
 			});
 			
@@ -140,10 +145,8 @@
 				"{{ route('peta.json') }}"
 			);
 		}
-
 		var jenis_faskes = $('#jenis_faskes').val();
 		var jam_buka = $('#jam_buka').val();
-
 		$.ajax({
 			type: "GET",
 			url: "{{ route('nilai_akses') }}",
@@ -155,11 +158,9 @@
 				initMap(response);
 			}
 		});
-
 		$("#cari").click(function(){
 			var jenis_faskes = $('#jenis_faskes').val();
 			var jam_buka = $('#jam_buka').val();
-
 			$.ajax({
 				type: "GET",
 				url: "{{ route('nilai_akses') }}",
@@ -175,3 +176,4 @@
 	</script>
 
 @endpush
+

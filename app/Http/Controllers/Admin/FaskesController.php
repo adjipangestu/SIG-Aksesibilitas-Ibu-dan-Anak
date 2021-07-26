@@ -8,18 +8,19 @@ use DB;
 use DataTables;
 
 class FaskesController extends Controller
-{
+{  
+    // Pengecekan hak akses
     public function __construct()
     {
         $this->middleware('auth');
         $this->middleware('role:admin');
     }
-    
+    //fungsi untuk memanggil admin faskes
     public function index()
     {
         return view('admin.faskes.index');
     }
-
+    // isi dari tabel data faskes
     public function dataList()
     {
         $data = DB::table('datafaskes')->orderBy('id_faskes', 'DESC')
@@ -49,18 +50,18 @@ class FaskesController extends Controller
                 ->addIndexColumn()
                 ->make(true);
     }
-
+    //fungsi tambah data (isiasi db)
     public function add()
     {
         $jam_buka = DB::table('jam_buka')->get();
         $jenis_faskes = DB::table('datajenis')->get();
         $kelurahan = DB::table('kelurahan')->get();
-
+        //data akan di kirim ke view data faskes
         return view('admin.faskes.add', ['jam_buka' => $jam_buka, 'jenis_faskes' => $jenis_faskes, 'kelurahan' => $kelurahan]);
     }
-
+    //proses simpan tambah data
     public function addDo(Request $request)
-    {
+    { // validasi data apakah terisi atau tidak
         $this->validate($request, [
             'nama_faskes' => 'required',
             'jam_buka' => 'required',
@@ -70,7 +71,7 @@ class FaskesController extends Controller
             'lat' => 'required',
             'long' => 'required',
         ],
-        [
+        [// allert tidak boleh kosong
             'nama_faskes.required' => 'Nama Faskes tidak boleh kosong',
             'jam_buka.required' => 'Jam Buka tidak boleh kosong',
             'jenis_faskes.required' => 'Jenis Fasilitas tidak boleh kosong',
@@ -79,7 +80,7 @@ class FaskesController extends Controller
             'lat.required' => 'Latitude tidak boleh kosong',
             'long.required' => 'Longitude tidak boleh kosong',
         ]);
-
+            //memasukan ke kolom
         DB::table('datafaskes')->insert([
             'nama_faskes' => $request->input('nama_faskes'),
             'id_jam_buka' => $request->input('jam_buka'),
@@ -95,7 +96,7 @@ class FaskesController extends Controller
 
         return redirect()->route('admin.faskes.index')->with('success', 'Data berhasil ditambahkan');
     }
-
+    //fungsi edit data (inisiasi db)
     public function edit($id)
     {
         $jam_buka = DB::table('jam_buka')->get();
@@ -153,7 +154,7 @@ class FaskesController extends Controller
 
         return redirect()->route('admin.faskes.index')->with('success', 'Data berhasil diupdate');
     }
-    
+    //fungsi hapus data
     public function delete($id)
     {
         DB::table('datafaskes')->where('id_faskes', $id)->delete();

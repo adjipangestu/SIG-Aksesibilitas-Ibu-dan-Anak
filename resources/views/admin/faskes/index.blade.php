@@ -17,14 +17,14 @@
             <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="database"></i></span></span>Data Fasilitas Kesehatan</h4>
         </div>
         <!-- /Title -->
-
+        <!-- Tampilan Tabel untuk Data Faskes (Bagian yang Pertama muncul saat membuka menu data faskes-->
         <section class="hk-sec-wrapper">
             <h5 class="hk-sec-title"><a href="{{ route('admin.faskes.add') }}" class="btn btn-primary">Tambah Data</a></h5>
             <div class="row">
                 <div class="col-sm">
-                    <div class="table-wrap">
+                    <div class="table-wrap"> 
                         <table id="data_faskes" class="table table-hover w-100 display">
-                            <thead>
+                            <thead> 
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Fasilitas Kesehatan</th>
@@ -66,7 +66,7 @@
     <script src="{{ asset('assets/vendors/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
     <script src="{{ asset('assets/dist/js/dataTables-data.js') }}"></script>
-
+<!-- Kolom Aksi pada Data Faskes -->
     <script>
         $(document).ready(function() {
             $('#data_faskes').DataTable({
@@ -107,6 +107,7 @@
             });
         } );
     </script>
+    <!-- Allert Sebelum Hapus Data -->
     <script>
         $('#data_faskes').on('click','.deleted', function () {
             var result = confirm("Yakin ingin menghapus data?");
