@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use DataTables;
 
 class IndexController extends Controller
 {
@@ -283,5 +284,57 @@ class IndexController extends Controller
             return new JsonResponse(['message' => $e->getMessage()], 422);
         }
         
+    }
+
+    public function faskes(Request $request)
+    {
+        $jenis_faskes = DB::table('datajenis')->get();
+        $jam_buka = DB::table('jam_buka')->get();
+        return view('faskes', ['jenis_faskes' => $jenis_faskes, 'jam_buka' => $jam_buka]);
+    }
+
+    public function faskesList(Request $request)
+    {
+        $id_jenis_faskes = !empty($request->jenis_faskes) ? ($request->jenis_faskes) : ('');
+        $id_jam_buka = !empty($request->jam_buka) ? ($request->jam_buka) : ('');
+
+        $data_faskes = DB::table('datafaskes')
+                            ->join('kelurahan', 'kelurahan.id_kelurahan', '=', 'datafaskes.id_kelurahan')
+                            ->join('datajenis', 'datajenis.id_jenis_faskes', '=', 'datafaskes.id_jenis_faskes')
+                            ->join('jam_buka', 'jam_buka.id_jam_buka', '=', 'datafaskes.id_jam_buka')
+                            ->select('nama_faskes','jam_buka', 'jenis_faskes','tipe', 'tahun', 'telp', 'nama_kelurahan', 'alamat');
+
+        if ($id_jenis_faskes) {
+            $data_faskes->where('datajenis.id_jenis_faskes', $id_jenis_faskes);
+        }
+
+        if ($id_jam_buka) {
+            $data_faskes->where('jam_buka.id_jam_buka', $id_jam_buka);
+        }
+
+        $data = $data_faskes->get();
+        if($data){
+            return Datatables::of($data)
+                ->addColumn('telp', function ($data) {
+                    if($data->telp == ""){
+                        return '-';
+                    } else {
+                        return $data->telp;
+                    }  
+                })
+                ->addColumn('tipe', function ($data) {
+                    if($data->tipe == ""){
+                        return '-';
+                    } else {
+                        return $data->tipe;
+                    }  
+                })
+                ->addIndexColumn()
+                ->make(true);
+        }
+
+        if ($request->ajax() || $request->wantsJson()) {
+            return new JsonResponse(['message' => $e->getMessage()], 422);
+        }
     }
 }

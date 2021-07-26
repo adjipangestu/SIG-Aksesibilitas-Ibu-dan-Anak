@@ -17,6 +17,8 @@ Route::get('/persebaran', 'IndexController@persebaran')->name('persebaran');
 Route::get('/persebaran/list', 'IndexController@persebaranList')->name('persebaran.list');
 Route::get('/json', 'IndexController@json')->name('peta.json');
 Route::get('/nilai-akses', 'IndexController@nilai_akses')->name('nilai_akses');
+Route::get('/fasilitas-kesehatan', 'IndexController@faskes')->name('faskes');
+Route::get('/fasilitas-kesehatan-list', 'IndexController@faskesList')->name('faskes.list');
 
 
 Auth::routes();

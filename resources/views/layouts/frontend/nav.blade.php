@@ -8,6 +8,9 @@
 					
 					<div class="collapse navbar-collapse ml-auto" id="navbarCollapseAlt">
 						<ul class="navbar-nav ml-auto">
+							<li class="nav-item mr-10">
+								<a class="nav-link {{ Request::segment(1) == 'fasilitas-kesehatan' ? 'active' : ''}}" href="{{ route('faskes') }}">Fasilitas Kesehatan</a>
+							</li>
                             <li class="nav-item mr-10">
 								<a class="nav-link {{ Request::segment(1) == 'persebaran' ? 'active' : ''}}" href="{{ route('persebaran') }}">Peta Persebaran</a>
 							</li>
