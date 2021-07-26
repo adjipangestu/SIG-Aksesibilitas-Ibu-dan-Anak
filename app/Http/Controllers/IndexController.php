@@ -193,6 +193,7 @@ class IndexController extends Controller
             return '#FF6542'; //1.637871984- 2.419514423
         } else if($nilai >$kelas_dua && $nilai <=$kelas_satu) {
             return '#BF130A'; //2.419514423 - 3.201156861 (gelap)
+        }
 
         $kelas_satu = $data_rentang['max'];
         $kelas_dua = $kelas_satu - $data_rentang['rentang'];
@@ -225,8 +226,7 @@ class IndexController extends Controller
         $result = [
             'min' => $min,
             'max' => $max,
-            'rentang' => ($max - $min) / 4
-            'rentang' => ($max - $min) / 5
+            'rentang' => ($max - $min) / 4,
         ];
 
         return $result;
