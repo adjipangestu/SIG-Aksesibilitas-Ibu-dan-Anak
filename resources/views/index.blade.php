@@ -52,23 +52,31 @@
 										<div class="col-md-4 form-group">
 											<button id="cari" class="btn btn-primary">Cari</button>
 										</div>
-										<div class="col-md-3">
-											<h6 style="background-color: #FBE8E7">Sangat Tinggi</h6>
-										</div>
-										<div class="col-md-3">
-											<h6 style="background-color: #FFA690">Tinggi</h6>
-										</div>
-										<div class="col-md-3">
-											<h6 style="background-color: #FF6542">Sedang</h6>
-										</div>
-										<div class="col-md-3">
-											<h6 style="background-color: #BF130A">Rendah</h6>
-										</div>
+
 									</div>
                                 </div>
                             </div>
+							<div class="row mt-10">
+                                <div class="col-sm">
+									<h5>Keterangan</h5>
+									<div class="row mt-3">
+										<div class="col-md-6 form-group">
+											<button class="btn" style="background-color: #FBE8E7">Sangat Tinggi</button>
+											<button class="btn" style="background-color: #FFA690">Tinggi</button>
+											<button class="btn" style="background-color: #FF6542">Sedang</button>
+											<button class="btn" style="background-color: #BF130A">Rendah</button>
+										</div>
+									</div>
+								</div>
+							</div>
 							<div class="row mt-3">
-								<h4 id="box-keterangan-kecamatan"></h4>
+                                <div class="col-sm">
+									<div class="row">
+										<div class="col-md-12 form-group">
+											<h5 id="box-keterangan-kecamatan"></h5>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</section>

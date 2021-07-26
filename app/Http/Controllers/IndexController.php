@@ -178,11 +178,11 @@ class IndexController extends Controller
     public function kelas($data_rentang, $nilai)
     {
 
-        $kelas_satu = $data['max'];
-        $kelas_dua = $kelas_satu- $data['rentang'];
-        $kelas_tiga = $kelas_dua - $data['rentang'];
-        $kelas_empat = $kelas_tiga - $data['rentang'];
-        $kelas_lima = $data['min'];
+        $kelas_satu = $data_rentang['max'];
+        $kelas_dua = $kelas_satu- $data_rentang['rentang'];
+        $kelas_tiga = $kelas_dua - $data_rentang['rentang'];
+        $kelas_empat = $kelas_tiga - $data_rentang['rentang'];
+        $kelas_lima = $data_rentang['min'];
 
 
         if($nilai >=$kelas_lima && $nilai <=$kelas_empat){
